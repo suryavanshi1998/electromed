@@ -5,10 +5,10 @@
 //Defining Web Server
 ESP8266WebServer server(80);
 /* Configuration Variables for the AP name and IP. */
-const char *ssid = "Test";
-const char *password = "Password";
-IPAddress ap_local_IP(192,168,1,1);
-IPAddress ap_gateway(192,168,1,254);
+const char *ssid = "emed@vnpuri";
+const char *password = "D17vnpuri";
+IPAddress ap_gateway(192,168,1,1);
+IPAddress ap_local_IP(192,168,1,254);
 IPAddress ap_subnet(255,255,255,0);
 
 
@@ -122,6 +122,33 @@ void write_EEPROM(String x,int pos){
      EEPROM.write(n,x[n-pos]);
   }
 }
+
+void read_eprom()
+{
+  EEPROM.begin(512);  //Initialize EEPROM
+  Serial.begin(9600); //Serial communication to display data
+  // read appropriate byte of the EEPROM.  
+  Serial.println(""); //Goto next line, as ESP sends some garbage when you reset it  
+  Serial.print(char(EEPROM.read(addr)));    //Read from address 0x00
+  addr++;                      //Increment address
+  Serial.print(char(EEPROM.read(addr)));    //Read from address 0x01
+  addr++;                      //Increment address
+  Serial.println(char(EEPROM.read(addr)));    //Read from address 0x02
+ 
+  //Read string from eeprom
+  String www;   
+  //Here we dont know how many bytes to read it is better practice to use some terminating character
+  //Lets do it manually www.circuits4you.com  total length is 20 characters
+  for(int i=0;i<30;i++) 
+  {
+    www = www + char(EEPROM.read(0x0F+i)); //Read one by one with starting address of 0x0F    
+  }
+
+     Serial.print(www);  //Print the text on serial monitor
+}
+
+
+
 //Shows when we get a misformt or wrong request for the web server
 void handleNotFound()
 {
@@ -139,5 +166,3 @@ void handleNotFound()
   message +="<H2><a href=\"/\">go home</a></H2><br>";
   server.send(404, "text/plain", message);
 }
-
-
