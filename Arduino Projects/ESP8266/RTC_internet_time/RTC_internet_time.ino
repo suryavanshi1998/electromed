@@ -1,17 +1,16 @@
-/*#include <ESP8266WiFi.h>
-  #include "emedwifi.h"*/
+#include <ESP8266WiFi.h>
+#include "emedwifi.h"*/
 #include <ArduinoJson.h>
-/*
-  String input = "";
-  //String Temp = "";
-  //String Humidity = "";
-  //String wind_speed = "";
-  //String wind_direction = "";
-  //String status = "";
-*/
+#include <Wire.h>
+#include "RTClib.h"
 
-/*
-  String time_api () {
+DateTime now;
+char daysOfTheWeek[7][12] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+
+RTC_DS3231 rtc;
+
+
+String time_api () {
 
 
   unsigned long currentTime = millis();
@@ -35,7 +34,7 @@
 
 
   //String url = "http://worldclockapi.com/api/json/est/now";
-    String url = "http://api.timezonedb.com/v2.1/get-time-zone?key=OL4S2K3JTIWD&format=json&by=zone&zone=Asia/Kolkata";
+  String url = "http://api.timezonedb.com/v2.1/get-time-zone?key=OL4S2K3JTIWD&format=json&by=zone&zone=Asia/Kolkata";
 
   Serial.print("Requesting URL: ");
   Serial.println(url);
@@ -63,13 +62,13 @@
   //Serial.print(input2);
   return input2;
 
-  }
+}
 
 
 
 
-  void wifi_setup()
-  {
+void wifi_setup()
+{
   /* const char* ssid     = "emed@17vnpuri";
     const char* password = "D17vnpuri";// Host
     IPAddress local_IP(192, 168, 1, 184);
@@ -79,8 +78,8 @@
     IPAddress subnet(255, 255, 0, 0);
     IPAddress primaryDNS(8, 8, 8, 8);   //optional
     IPAddress secondaryDNS(8, 8, 4, 4); //optional
-*/
-/*
+  */
+
   if (!WiFi.config(local_IP, gateway, subnet, primaryDNS, secondaryDNS)) {
     Serial.println("STA Failed to configure");
 
@@ -103,16 +102,13 @@
   Serial.println(WiFi.localIP());
   return;
 
-  }
-*/
+}
 
-void json_parse () {
-  // void apirequest ();
-  // Serial.println(input2);
-  String input2 = "{\"status\":\"OK\",\"message\":\",\"countryCode\":\"IN\",\"countryName\":\"India\",\"zoneName\":\"Asia/Kolkata\",\"abbreviation\":\"IST\",\"gmtOffset\":19800,\"dst\":\"0\",\"zoneStart\":-764145000,\"zoneEnd\":null,\"nextAbbreviation\":null,\"timestamp\":1604611175,\"formatted\":\"2020-11-05 21:19:35\"}";
 
-  DynamicJsonBuffer jsonBuffer;
-  JsonObject& root = jsonBuffer.parseObject(input2);
+String json_parse (String input2) {
+
+  DynamicJsonBuffer jsonBuffer1;
+  JsonObject& root = jsonBuffer1.parseObject(input2);
 
 
 
@@ -120,38 +116,139 @@ void json_parse () {
   status = root["status"].as<String>();
   root["status"] = status;
 
-  String Time = root["formatted"];
-  Time = root["formatted"].as<String>();
-  root["data"]["formatted"] = Time;
+  String date_time = root["formatted"];
+  date_time = root["formatted"].as<String>();
+  root["data"]["formatted"] = date_time;
+
+
 
   String output;
   Serial.print("status  :");
   Serial.print(status);
   Serial.print("\n");
   Serial.print("Date & Time  :");
-  Serial.print(Time);
+  Serial.print(date_time);
   Serial.print("\n");
+  /*
+    Serial.print("Time :");
+    Serial.print(time);
+    Serial.print("\n");
+    Serial.print("Date :");
+    Serial.print(date);
+  */
+  return date_time;
 
 
 }
 
 void setup()
 {
+
+
   Serial.begin(115200);
   delay(10);
-  //  wifi_setup();
+  wifi_setup();
 
 
-  //String returnedString = time_api ();
+  String returnedString = time_api ();
   //Serial.println(returnedString);
-  delay(5000);
+  delay(1000);
 
-  json_parse ();
-  delay(10000);
+  String returned_DateTime =  json_parse (returnedString);
+  delay(1000);
+  //  Serial.print("test....");
+  // Serial.print(returned_DateTime);
+  rtc_time(returned_DateTime);
+  showDate();
+
+
 }
 
 void loop()
 {
+  //  now = rtc.now();
+
+}
+
+void showDate()
+{
+  now = rtc.now();
+  delay(500);
+  Serial.print("\n");
+  Serial.print("RTC Date  :");
+  Serial.print(now.day());
+  Serial.print('/');
+  Serial.print(now.month());
+  Serial.print('/');
+  Serial.print(now.year());
+  Serial.print("\n");
+
+  Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
+  Serial.print("\n");
+  Serial.print("RTC TIME :");
+  Serial.print(now.hour());
+  Serial.print(':');
+  Serial.print(now.minute());
+  Serial.print(':');
+  Serial.print(now.second());
+  Serial.print("    ");
+}
+/*
+  void showDay()
+  {
+
+  Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
+  }
+  void showTime()
+  {
+  Serial.print("Time:");
+  Serial.print(now.hour());
+  Serial.print(':');
+  Serial.print(now.minute());
+  Serial.print(':');
+  Serial.print(now.second());
+  Serial.print("    ");
+
+  }
+*/
+void rtc_time(String date_time) {
 
 
+  String Year = date_time.substring(1, 4);
+  String Month = date_time.substring(5,7);
+  String Day = date_time.substring(9,10);
+
+  String Hour = date_time.substring(11, 13);
+  String Minute = date_time.substring(14, 16);
+  String Second = date_time.substring(17, 19);
+
+  int Y = Year.toInt();
+  int Mo = Month.toInt();
+  int D = Day.toInt();
+
+  int H = Hour.toInt();
+  int M = Minute.toInt();
+  int S = Second.toInt();
+
+  /*Serial.print("test.....\n");
+    Serial.print("Date  :");
+    Serial.print(date);
+    Serial.print("\nTime  :");
+    Serial.print(time);
+  */
+  if (! rtc.begin())
+  {
+    Serial.println("Couldn't find RTC Module");
+    while (1);
+  }
+
+  if (rtc.lostPower())
+  {
+
+    Serial.println("RTC lost power, lets set the time!");
+
+    rtc.adjust(DateTime(Y, Mo, D, H, M, S));
+  }
+
+  rtc.adjust(DateTime(Y, Mo, D, H, M, S));
 }
