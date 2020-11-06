@@ -45,6 +45,9 @@ def image_air_quality (extract_data ):
 	out1 = Image.alpha_composite(base, txt)
 	out1.show()
 	out1.save("output_air_quality.png") 
+	#time.sleep(5)
+	#out1.close()
+
 	#whether_api ()
 
 
