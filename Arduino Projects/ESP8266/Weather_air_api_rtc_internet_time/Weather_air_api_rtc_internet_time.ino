@@ -236,7 +236,7 @@ void setup()
   //  Serial.print("test....");
   // Serial.print(returned_DateTime);
   rtc_time(returned_DateTime);
-  showDate();
+
 
 
 
@@ -351,6 +351,7 @@ void showDate()
 
 void loop()
 {
-
+  showDate();
+  delay(1000);
 
 }

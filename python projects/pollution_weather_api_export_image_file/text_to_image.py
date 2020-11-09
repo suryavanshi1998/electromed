@@ -5,6 +5,7 @@ import time
 
 def image_air_quality (extract_data ):
 
+
 	no2= extract_data["NO2"]
 	aqi= extract_data["AQI"]
 	O3= extract_data["O3"]
@@ -79,22 +80,22 @@ def image_weather (extract_data):
 	d.text((40,25), "Ambient Whether Parameters",font=font1, fill=(205,205,205,205))
 
 
-	d.text((20,45), "Tempreture:",font=font2, fill=(205,205,205,205))
-	d.text((130,45), tempreture,font=font2, fill=(205,205,205,205))
-	d.text((150,45), "°C",font=font2, fill=(205,205,205,205))
+	d.text((5,45), "Tempreture:",font=font2, fill=(205,205,205,205))
+	d.text((115,45), tempreture,font=font2, fill=(205,205,205,205))
+	d.text((135,45), "°C",font=font2, fill=(205,205,205,205))
 
 
-	d.text((20,68), "Humidity:",font=font2, fill=(205,205,205,205))
-	d.text((130,68), humidity,font=font2, fill=(205,205,205,205))
+	d.text((5,68), "Humidity:",font=font2, fill=(205,205,205,205))
+	d.text((115,68), humidity,font=font2, fill=(205,205,205,205))
 
 
 
 
-	d.text((20,86), "Wind Speed:",font=font2, fill=(205,205,205,205))
-	d.text((130,86), wind_speed, font=font2,fill=(205,205,205,205))
+	d.text((5,86), "Wind Speed:",font=font2, fill=(205,205,205,205))
+	d.text((115,86), wind_speed, font=font2,fill=(205,205,205,205))
 
-	d.text((20,104), "Wind Direction:",font=font2, fill=(205,205,205,205))
-	d.text((130,104), wind_direction,font=font2, fill=(205,205,205,205))
+	d.text((5,104), "Wind Direction:",font=font2, fill=(205,205,205,205))
+	d.text((115,104), wind_direction,font=font2, fill=(205,205,205,205))
 
 
 	out2 = Image.alpha_composite(base, txt)
