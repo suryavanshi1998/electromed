@@ -1,18 +1,22 @@
+
+
 import requests
 import json
 import array as arr
 import time
-from text_to_image import image_air_quality, image_weather
+from text_to_image_final import genAirQualityImage,genAaqi,temp_hum,windImage
 
 
 
 def weather_api():
-
 	
 
- 
-	r = requests.get("http://api.airpollutionapi.com/1.0/aqi?lat=25.290964&lon=83.004257&APPID=qsfmma0bkgr296g79ogrhfubg5")
+	r = requests.get("http://api.airpollutionapi.com/1.0/aqi?lat=25.302547&lon=82.983220&APPID=qsfmma0bkgr296g79ogrhfubg5")
 	res = r.json()
+		
+		  
+	
+	
 	#print(res)
 		 
 	# Extract specific node content.
@@ -21,7 +25,6 @@ def weather_api():
 
 	#alert = res['data']['alert']
 	#print("Alert:",alert)
-
 
 	#print("Country:",res['data']['country'])
 	#print("LOCATION",res['data']['source']['name'])
@@ -40,7 +43,7 @@ def weather_api():
 		
 		
 
-	print("NO2>>",NO2)
+	#print("NO2>>",NO2)
 
 
 	raw_O3= aqiParams[1]["value"]
@@ -52,7 +55,7 @@ def weather_api():
 		O3 = '..........'
 		raise e
 		
-	print("O3>>",O3)
+	#print("O3>>",O3)
 
 
 
@@ -63,7 +66,7 @@ def weather_api():
 	except Exception as e:
 		aqi = '..........'
 		raise e
-	print("AQI:",aqi)
+	#print("AQI:",aqi)
 
 		
 	raw_pm2_5 = aqiParams[2]["value"]
@@ -75,7 +78,7 @@ def weather_api():
 		PM2_5 = '..........'
 		raise e
 		
-	print("PM2.5>>",PM2_5)
+	#print("PM2.5>>",PM2_5)
 		
 	try:
 		tempreture = res['data']['temp']
@@ -84,7 +87,7 @@ def weather_api():
 		tempreture = '..........'
 		raise e
 		
-	print("Temprature:",tempreture)
+	#print("Temprature:",tempreture)
 
 	try:
 		humidity = aqiParams[3]["value"]
@@ -93,7 +96,7 @@ def weather_api():
 		humidity = '..........'
 		raise e
 		
-	print("Humidity:",humidity)
+	#print("Humidity:",humidity)
 
 	try:
 		wind_speed = aqiParams[5]["value"]
@@ -102,7 +105,7 @@ def weather_api():
 		wind_speed = '..........'
 		raise e
 		
-	print("wind speed:",wind_speed)
+	#print("wind speed:",wind_speed)
 
 	try:
 		wind_direction = aqiParams[6]["value"]
@@ -115,28 +118,24 @@ def weather_api():
 	aqi0 = aqiParams[0]["aqi"]
 	aqi1 = aqiParams[1]["aqi"]
 	aqi2 = aqiParams[2]["aqi"]
-		
+	
 	if aqi0>=aqi1 and aqi0>=aqi2:
 		integer_aqi=aqi0
 		primary_pollutant = 'NO2'
 
 	elif aqi1>=aqi0 and aqi1>=aqi2:
-		 integer_aqi=aqi1
-		 primary_pollutant = 'O3'
+	 	integer_aqi=aqi1
+	 	primary_pollutant = 'O3'
 	elif aqi2>=aqi0 and aqi2>=aqi1:
 		integer_aqi=aqi2
 		primary_pollutant = 'pm2.5'
 	 	
 
 	aqi = str(integer_aqi)
-	print("AQI0-->>",aqi0)
-	print("AQI1-->>",aqi1)
-	print("AQI2-->>",aqi2)
-	print("COMPARED AQI",aqi)
-	print("wind direction:",wind_direction)
-	print("primary pollutant-->>",primary_pollutant)
+	
 
-	extract_data = { 
+
+	data = { 
 
 						"NO2":NO2,
 		 				"AQI":aqi, 
@@ -148,16 +147,23 @@ def weather_api():
 		 				"Wind_speed":wind_speed,
 		 				"Wind_direction":wind_direction
 
-		 	
-		 				
-		 				}
+	}
 
-	image_air_quality (extract_data)
-	image_weather (extract_data)
-	time.sleep(3600)
+	a = str(data)
+		
+	file = open("/home/pi/Desktop/main/data/output.txt", "w")
+	file.write(a)
+	file.close()			
+							
+		#return extract_data
 
-weather_api ()
+		#data = getData()
+
+	genAirQualityImage(data)
+	genAaqi (data)
+	windImage(data)
+	temp_hum (data)
+	
 
 
-
-
+weather_api()

@@ -3,18 +3,141 @@
 #include <ArduinoJson.h>
 #include <Wire.h>
 #include "RTClib.h"
+#include <EEPROM.h>
+#include <ESP8266WebServer.h>
+
+ESP8266WebServer server(80);
 DateTime now;
 char daysOfTheWeek[7][12] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
+int reset_mode = 13;
+int ledpin = 12;
+
 RTC_DS3231 rtc;
-/*
-  String input = "";
-  //String Temp = "";
-  //String Humidity = "";
-  //String wind_speed = "";
-  //String wind_direction = "";
-  //String status = "";
-*/
+
+const char INDEX_HTML[] =
+  "<!DOCTYPE HTML>"
+  "<html>"
+  "<head>"
+  "<meta content=\"text/html; charset=ISO-8859-1\""
+  " http-equiv=\"content-type\">"
+  "<meta name = \"viewport\" content = \"width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=0\">"
+  "<title>Wifi Configuration</title>"
+  "<style>"
+  "\"body { background-color: #808080; font-family: Arial, Helvetica, Sans-Serif; Color: #000000; }\""
+  "</style>"
+  "</head>"
+  "<body>"
+  "<h1>RESET MODE</h1>"
+  "<FORM action=\"/\" method=\"post\">"
+  "<P>"
+  "<label>ssid:&nbsp;</label>"
+  "<input maxlength=\"30\" name=\"ssid\"><br>"
+  "<label>Password:&nbsp;</label><input maxlength=\"30\" name=\"Password\"><br>"
+  "<label>IP:&nbsp;</label><input maxlength=\"15\" name=\"IP\"><br>"
+  "<label>Gateway:&nbsp;</label><input maxlength=\"3\" name=\"GW\"><br>"
+  "<INPUT type=\"submit\" value=\"Send\"> <INPUT type=\"reset\">"
+  "</P>"
+  "</FORM>"
+  "</body>"
+  "</html>";
+
+
+
+
+
+void setup()
+{
+  pinMode(ledpin, OUTPUT);
+  pinMode(reset_mode, INPUT);// declare push button as input
+  EEPROM.begin(512);//Starting and setting size of the EEPROM
+  Serial.begin(115200);
+
+  server.begin();
+  Serial.println("HTTP server started");
+  delay(10);
+  wifi_setup();
+
+  String returnedString = aqi_weather_api ();
+  //Serial.println(returnedString);
+  delay(5000);
+
+
+  json_parse (returnedString);
+  delay(10000);
+
+  String returned_String = time_api ();
+  //Serial.println(returnedString);
+  delay(1000);
+
+  String returned_DateTime =  json_parse_time (returned_String);
+  delay(1000);
+  //  Serial.print("test....");
+  // Serial.print(returned_DateTime);
+  rtc_time(returned_DateTime);
+  showDate();
+  server.handleClient();
+
+  int temp = digitalRead(reset_mode);
+
+  /**IPAddress myIP = WiFi.softAPIP();
+    Serial.print("AP IP address: ");
+    Serial.println(myIP);**/
+  //Configuring the web server
+
+
+}
+
+
+void loop()
+{
+
+  int temp = digitalRead(reset_mode);
+
+
+  server.handleClient();
+
+
+  if (temp == 1) {
+    server.on("/", handleRoot);
+    server.onNotFound(handleNotFound);
+    Serial.println("HTTP server started");
+
+    Serial.print("\nServer Started on RESET MODE");
+    //resetMode();
+    digitalWrite(ledpin, HIGH);
+  }
+  else
+  {
+    Serial.print("\nNORMAL MODE");
+    delay(1000);
+    digitalWrite(ledpin, LOW);
+  }
+  /**IPAddress myIP = WiFi.softAPIP();
+    Serial.print("AP IP address: ");
+    Serial.println(myIP);**/
+  //Configuring the web server
+  delay(100);
+
+
+}
+
+
+
+void resetMode()
+
+{
+  server.on("/", handleRoot);
+  server.onNotFound(handleNotFound);
+  server.begin();
+  Serial.println("HTTP server started");
+}
+
+
+
+
+
+
 
 void wifi_setup()
 {
@@ -212,37 +335,6 @@ void json_parse (String input) {
 
 }
 
-void setup()
-{
-  Serial.begin(115200);
-  delay(10);
-  wifi_setup();
-
-
-  String returnedString = aqi_weather_api ();
-  //Serial.println(returnedString);
-  delay(5000);
-
-
-  json_parse (returnedString);
-  delay(10000);
-
-  String returned_String = time_api ();
-  //Serial.println(returnedString);
-  delay(1000);
-
-  String returned_DateTime =  json_parse_time (returned_String);
-  delay(1000);
-  //  Serial.print("test....");
-  // Serial.print(returned_DateTime);
-  rtc_time(returned_DateTime);
-
-
-
-
-
-}
-
 
 
 String json_parse_time (String input2) {
@@ -349,9 +441,71 @@ void showDate()
   Serial.print("    ");
 }
 
-void loop()
-{
-  showDate();
-  delay(1000);
 
+
+
+void handleRoot() {
+  if (server.hasArg("ssid") && server.hasArg("Password") && server.hasArg("IP") && server.hasArg("GW") ) { //If all form fields contain data call handelSubmit()
+    handleSubmit();
+  }
+  else {//Redisplay the form
+    server.send(200, "text/html", INDEX_HTML);
+  }
+}
+
+
+void handleSubmit() { //dispaly values and write to memmory
+  String response = "<p>The ssid is ";
+  response += server.arg("ssid");
+  response += "<br>";
+  response += "And the password is ";
+  response += server.arg("Password");
+  response += "<br>";
+  response += "And the IP Address is ";
+  response += server.arg("IP");
+  response += "</P><BR>";
+  response += "<H2><a href=\"/\">go home</a></H2><br>";
+
+  server.send(200, "text/html", response);
+  //calling function that writes data to memory
+  write_to_Memory(String(server.arg("ssid")), String(server.arg("Password")), String(server.arg("IP")), String(server.arg("GW")));
+}
+//Write data to memory
+/**
+   We prepping the data strings by adding the end of line symbol I decided to use ";".
+   Then we pass it off to the write_EEPROM function to actually write it to memmory
+*/
+void write_to_Memory(String s, String p, String i, String g) {
+  s += ";";
+  write_EEPROM(s, 0);
+  p += ";";
+  write_EEPROM(p, 100);
+  i += ";";
+  write_EEPROM(i, 200);
+  g += ";";
+  write_EEPROM(g, 220);
+  EEPROM.commit();
+}
+//write to memory
+void write_EEPROM(String x, int pos) {
+  for (int n = pos; n < x.length() + pos; n++) {
+    EEPROM.write(n, x[n - pos]);
+  }
+}
+
+void handleNotFound()
+{
+  String message = "File Not Found\n\n";
+  message += "URI: ";
+  message += server.uri();
+  message += "\nMethod: ";
+  message += (server.method() == HTTP_GET) ? "GET" : "POST";
+  message += "\nArguments: ";
+  message += server.args();
+  message += "\n";
+  for (uint8_t i = 0; i < server.args(); i++) {
+    message += " " + server.argName(i) + ": " + server.arg(i) + "\n";
+  }
+  message += "<H2><a href=\"/\">go home</a></H2><br>";
+  server.send(404, "text/plain", message);
 }

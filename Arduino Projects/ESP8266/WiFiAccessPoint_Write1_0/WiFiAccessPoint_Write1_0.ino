@@ -122,7 +122,7 @@ void write_EEPROM(String x,int pos){
      EEPROM.write(n,x[n-pos]);
   }
 }
-
+/*
 void read_eprom()
 {
   EEPROM.begin(512);  //Initialize EEPROM
@@ -145,7 +145,7 @@ void read_eprom()
   }
 
      Serial.print(www);  //Print the text on serial monitor
-}
+} */
 
 
 
