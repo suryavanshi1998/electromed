@@ -1,0 +1,1 @@
+{'NO2': '39.1 µg/m³', 'AQI': '78', 'O3': '78.01 µg/m³', 'PM2_5': '27.0 µg/m³', 'primary_pollutant': 'O3', 'Tempreture': '28', 'Humidity': '45.0 %', 'Wind_speed': ' 3.36 m/s', 'Wind_direction': '50.0 degrees'}

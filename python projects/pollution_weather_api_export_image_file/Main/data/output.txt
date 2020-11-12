@@ -1,0 +1,1 @@
+{'PM2_5': u'32.0 \xb5g/m\xb3', 'Tempreture': u'30', 'Wind_direction': u'70.0 degrees', 'O3': u'56.64 \xb5g/m\xb3', 'Wind_speed': u' 9.17 m/s', 'AQI': '56', 'primary_pollutant': 'O3', 'NO2': u'34.59 \xb5g/m\xb3', 'Humidity': u'35.0 %'}
