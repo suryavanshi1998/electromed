@@ -7,10 +7,14 @@
 #include <Wire.h>
 #include "RTClib.h"
 #include <WiFiUdp.h>
+#include <DHT.h>
 #include <FS.h>
 #define trigger 13
 #define LED 12
 #define power 14
+#define DHTPin 2 
+#define DHTTYPE DHT22   
+DHT dht(DHTPin, DHTTYPE); 
 
 char static_ip[16] = "192.168.1.184";
 char static_gw[16] = "192.168.1.1";
@@ -426,8 +430,8 @@ void handle_OnConnect() {
 
 
   //Date = String(currentYear) + "-" + String(currentMonth) + "-" + String(monthDay);
-  Temperature = 20;
-  Humidity = 20;
+  Temperature = dht.readTemperature(); 
+  Humidity = dht.readHumidity();
   server.send(200, "text/html", SendHTML(Temperature, Humidity, formattedTime, Date));
 }
 
