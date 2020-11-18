@@ -8,7 +8,7 @@
 #define LED 12
 #define power 14
 
-ESP8266WebServer server(81);
+ESP8266WebServer server(80);
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
@@ -30,13 +30,8 @@ void loop() {
 
     if (WiFi.status() == WL_CONNECTED)
     {
-      digitalWrite(power, LOW);
-      while (WiFi.status() == WL_CONNECTED) {
-        digitalWrite(LED, HIGH);
-        delay(500);
-        digitalWrite(LED, LOW);
-        delay(200);
-      }
+      digitalWrite(LED, HIGH);
+      
     }
     else {
       digitalWrite(LED, LOW);

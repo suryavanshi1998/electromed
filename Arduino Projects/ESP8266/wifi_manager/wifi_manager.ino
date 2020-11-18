@@ -6,83 +6,51 @@
 #include <WiFiManager.h>         //https://github.com/tzapu/WiFiManager
 #include <Wire.h>
 #include "RTClib.h"
-#include <WiFiUdp.h>
-#include <FS.h>
 #define trigger 13
 #define LED 12
 #define power 14
 
-char static_ip[16] = "192.168.1.184";
-char static_gw[16] = "192.168.1.1";
-char static_sn[16] = "255.255.255.0";
-ESP8266WebServer server(80);
-WiFiUDP ntpUDP;
-const long utcOffsetInSeconds = 28800;
-const int ledPin =  12; // the LED pin number connected
-int ledState = LOW;             // used to set the LED state
-unsigned long previousMillis = 0;  //will store last time LED was blinked
-const long period = 60000;
-DateTime now;
+
 char daysOfTheWeek[7][12] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+
 RTC_DS3231 rtc;
+DateTime now;
+void setup() {
 
 
 
-String SendHTML(float TemperatureWeb, float HumidityWeb, String TimeWeb, String DateWeb);
-void handle_OnConnect();
-void handle_NotFound();
-
-float Temperature;
-float Humidity;
-String formattedTime;
-String Date;
-int Day;
-int Month;
-int Year;
-
-
-void setup()
-{
+#ifdef ARDUINO_ARCH_AVR
+  int inttmp = 32123;
+#else
+  // too long for AVR 16 bits!
+  int inttmp = 24543557;
+#endif
+  // put your setup code here, to run once:
   Serial.begin(115200);
   Wire.begin();
   pinMode(trigger, INPUT);
   pinMode(LED, OUTPUT);
   pinMode(power, OUTPUT);
-  Serial.println("wifi mode");
-  delay(1000);
-  /*
-    String returnedString = aqi_weather_api ();
-    delay(1000);
-    json_parse (returnedString);
-    delay(1000);
-    String returned_String = time_api ();
-    //Serial.println(returnedString);
-    delay(1000);
-    String returned_DateTime =  json_parse_time (returned_String);
-    delay(1000);
-    // Serial.print(returned_DateTime);
-    rtc_time(returned_DateTime);
-    show();
-  */
-
-
-
+  delay(5000);
+  if (digitalRead(trigger) == HIGH) {
+    digitalWrite(power, HIGH);
+    WiFiManager wifiManager;
+    wifiManager.resetSettings();
+    wifiManager.autoConnect("CIRCUIT DIGEST WiFi Manager");
+    Serial.println("connected :)");
+  }
 }
 void loop() {
-
-  server.handleClient();
-  ResetSettings();
-  delay(1000);
   if (WiFi.status() == WL_CONNECTED)
   {
-    digitalWrite(power, HIGH);
-
-
-    digitalWrite(LED, HIGH);
-    millis_api();
-    /* String returnedString = aqi_weather_api ();
+    digitalWrite(power, LOW);
+    while (WiFi.status() == WL_CONNECTED) {
+      digitalWrite(LED, HIGH);
+      delay(500);
+      String returnedString = aqi_weather_api ();
       //Serial.println(returnedString);
       delay(1000);
+
 
       json_parse (returnedString);
       delay(1000);
@@ -96,8 +64,8 @@ void loop() {
       //  Serial.print("test....");
       // Serial.print(returned_DateTime);
       rtc_time(returned_DateTime);
-      show();*/
-
+      show();
+    }
   }
   else {
     digitalWrite(LED, LOW);
@@ -167,7 +135,7 @@ String aqi_weather_api () {
   // Define timeout time in milliseconds (example: 2000ms = 2s)
   const long timeoutTime = 2000;
 
-  const char* host = "35.154.55.24";
+  const char* host = "3.154.55.24";
 
   Serial.print("connecting to ");
   Serial.println(host);
@@ -212,7 +180,7 @@ String aqi_weather_api () {
 
 
 
-String json_parse (String input) {
+void json_parse (String input) {
   // void apirequest ();
   // Serial.println(input2);
   DynamicJsonBuffer jsonBuffer;
@@ -256,7 +224,6 @@ String json_parse (String input) {
   Serial.print("\n");
   Serial.print("wind direction-->");
   Serial.print(wind_direction);
-  return temp,Humidity;
 
 }
 
@@ -364,103 +331,4 @@ void show()
   Serial.print(':');
   Serial.print(now.second());
   Serial.print("    ");
-}
-
-void ResetSettings() {
-  if (digitalRead(trigger) == HIGH) {
-    delay(500);
-
-    digitalWrite(power, HIGH);
-    WiFiManager wifiManager;
-    wifiManager.resetSettings();
-
-
-    IPAddress _ip, _gw, _sn;
-    _ip.fromString(static_ip);
-    _gw.fromString(static_gw);
-    _sn.fromString(static_sn);
-
-
-    wifiManager.setSTAStaticIPConfig(_ip, _gw, _sn);
-    wifiManager.autoConnect("CIRCUIT DIGEST WiFi Manager");
-    Serial.println("connected :)");
-  }
-}
-
-void millis_api() {
-  unsigned long currentMillis = millis(); // store the current time
-  if ((currentMillis - previousMillis)  >= period) { // check if 1000ms passed
-
-    String returnedString = aqi_weather_api ();
-    //Serial.println(returnedString);
-    delay(1000);
-
-    json_parse (returnedString);
-    delay(1000);
-
-    String returned_String = time_api ();
-    //Serial.println(returnedString);
-    delay(1000);
-
-    String returned_DateTime =  json_parse_time (returned_String);
-    delay(1000);
-    //  Serial.print("test....");
-    // Serial.print(returned_DateTime);
-    rtc_time(returned_DateTime);
-    show();
-    webpage();
-    previousMillis = currentMillis;
-  }
-}
-
-void webpage() {
-
-  server.on("/", handle_OnConnect);
-  server.onNotFound(handle_NotFound);
-  server.begin();
-
-
-}
-
-void handle_OnConnect() {
-
-
-  //Date = String(currentYear) + "-" + String(currentMonth) + "-" + String(monthDay);
-  Temperature = 20;
-  Humidity = 20;
-  server.send(200, "text/html", SendHTML(Temperature, Humidity, formattedTime, Date));
-}
-
-void handle_NotFound() {
-  server.send(404, "text/plain", "Not found");
-}
-
-
-String SendHTML(float TemperatureWeb, float HumidityWeb, String TimeWeb, String DateWeb) {
-  String ptr = "<!DOCTYPE html> <html>\n";
-  ptr += "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
-  ptr += "<title>ESP8266 Global Server</title>\n";
-
-  ptr += "</head>\n";
-  ptr += "<body>\n";
-  ptr += "<div id=\"webpage\">\n";
-  ptr += "<h1>ESP8266 Global Server</h1>\n";
-
-  ptr += "<p>Date: ";
-  ptr += (String)DateWeb;
-  ptr += "</p>";
-  ptr += "<p>Time: ";
-  ptr += (String)TimeWeb;
-  ptr += "</p>";
-  ptr += "<p>Temperature: ";
-  ptr += (int)TemperatureWeb;
-  ptr += "C</p>";
-  ptr += "<p>Humidity: ";
-  ptr += (int)HumidityWeb;
-  ptr += "%</p>";
-
-  ptr += "</div>\n";
-  ptr += "</body>\n";
-  ptr += "</html>\n";
-  return ptr;
 }

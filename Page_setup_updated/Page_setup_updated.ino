@@ -1,229 +1,114 @@
-<<<<<<< HEAD
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
-#include "arduino_secret.h"
-#include <EEPROM.h>
+#include <DHT.h>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
 
-#include "page1.h"
-#include "page2.h"
-//#include "page3.h"
-//int addr = 0;
+#define DHTPin 2 
+#define DHTTYPE DHT22   
+DHT dht(DHTPin, DHTTYPE);                
+
+WiFiUDP ntpUDP;
+const long utcOffsetInSeconds = 28800;
+NTPClient timeClient(ntpUDP, "pool.ntp.org", utcOffsetInSeconds);
+unsigned long epochTime = timeClient.getEpochTime();
+struct tm *ptm = gmtime ((time_t *)&epochTime);
+
+const char* ssid = "emed@17vnpuri";  
+const char* password = "D17vnpuri"; 
+
+ESP8266WebServer server(80);
+
+String SendHTML(float TemperatureWeb,float HumidityWeb, String TimeWeb, String DateWeb);
+void handle_OnConnect();
+void handle_NotFound();
+
+float Temperature;
+float Humidity;
+String formattedTime;
+String Date;
+int Day;
+int Month;
+int Year;
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(DHTPin, INPUT);           
+
+  Serial.println("Connecting to ");
+  Serial.println(ssid);
+
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+  delay(1000);
+  Serial.print(".");
+  } 
+  Serial.println("");
+  Serial.println("Connected to WiFi");
+  Serial.print("IP: ");  Serial.println(WiFi.localIP());
+
+  server.on("/", handle_OnConnect);
+  server.onNotFound(handle_NotFound);
+  server.begin();
+  dht.begin();
+  timeClient.begin();
+}
+void loop() {
+  
+  server.handleClient();
+  
+}
+
+void handle_OnConnect() {
+
+  timeClient.update();
  
-ESP8266WebServer server(80);
+  unsigned long epochTime = timeClient.getEpochTime(); 
+  String formattedTime = timeClient.getFormattedTime();
+  
+  struct tm *ptm = gmtime ((time_t *)&epochTime); 
 
-void handleRoot() {
-  Serial.println("GET /");
-  server.send(200, "text/html", htmlPage1);
+  int monthDay = ptm->tm_mday;
+  int currentMonth = ptm->tm_mon+1;
+  int currentYear = ptm->tm_year+1900;
+ 
+  formattedTime = timeClient.getFormattedTime(); 
+  Date = String(currentYear) + "-" + String(currentMonth) + "-" + String(monthDay);
+  Temperature = dht.readTemperature(); 
+  Humidity = dht.readHumidity(); 
+  server.send(200, "text/html", SendHTML(Temperature,Humidity,formattedTime,Date)); 
 }
 
-void handlePage2() {
-  Serial.println("GET /page2");
-  if (server.hasArg("ssid")&& server.hasArg("Password")&& server.hasArg("IP")&&server.hasArg("GW") ) {//If all form fields contain data call handelSubmit()
-    handleSubmit();
-  }
-  else {//Redisplay the form
-  server.send(200, "text/html", htmlPage2);
-}
-}
-void handleSubmit(){//dispaly values and write to memmory
-  String response="<p>The ssid is ";
- response += server.arg("ssid");
- response +="<br>";
- response +="And the password is ";
- response +=server.arg("Password");
- response +="<br>";
- response +="And the IP Address is ";
- response +=server.arg("IP");
- response +="</P><BR>";
- response +="<H2><a href=\"/\">go home</a></H2><br>";
-
- server.send(200, "text/html", response);
- //calling function that writes data to memory 
-
- //calling function that writes data to memory 
- write_to_Memory(String(server.arg("ssid")),String(server.arg("Password")),String(server.arg("IP")),String(server.arg("GW")));
-}
-//Write data to memory
-/**
- * We prepping the data strings by adding the end of line symbol I decided to use ";". 
- * Then we pass it off to the write_EEPROM function to actually write it to memmory
- */
-void write_to_Memory(String s,String p,String i, String g){
- s+=";";
- write_EEPROM(s,0);
- p+=";";
- write_EEPROM(p,100);
- i+=";";
- write_EEPROM(i,200); 
- g+=";";
- write_EEPROM(g,220); 
- EEPROM.commit();
-}
-//write to memory
-void write_EEPROM(String x,int pos){
-  for(int n=pos;n<x.length()+pos;n++){
-     EEPROM.write(n,x[n-pos]);
-  }
+void handle_NotFound(){
+  server.send(404, "text/plain", "Not found");
 }
 
-void handleNotFound()
-{
-  String message = "File Not Found\n\n";
-  message += "URI: ";
-  message += server.uri();
-  message += "\nMethod: ";
-  message += (server.method() == HTTP_GET)?"GET":"POST";
-  message += "\nArguments: ";
-  message += server.args();
-  message += "\n";
-  for (uint8_t i=0; i<server.args(); i++){
-    message += " " + server.argName(i) + ": " + server.arg(i) + "\n";
-  }
-  message +="<H2><a href=\"/\">go home</a></H2><br>";
-  server.send(404, "text/plain", message);
-} 
+String SendHTML(float TemperatureWeb,float HumidityWeb, String TimeWeb,String DateWeb){
+  String ptr = "<!DOCTYPE html> <html>\n";
+  ptr +="<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
+  ptr +="<title>ESP8266 Global Server</title>\n";
 
+  ptr +="</head>\n";
+  ptr +="<body>\n";
+  ptr +="<div id=\"webpage\">\n";
+  ptr +="<h1>ESP8266 Global Server</h1>\n";
 
-
-
-
-
-
-/*
-void handlePage3() {
-  Serial.println("GET /page3");
-  server.send(200, "text/html", htmlPage3);
+  ptr +="<p>Date: ";
+  ptr +=(String)DateWeb;
+  ptr +="</p>";
+  ptr +="<p>Time: ";
+  ptr +=(String)TimeWeb;
+  ptr +="</p>";
+  ptr +="<p>Temperature: ";
+  ptr +=(int)TemperatureWeb;
+  ptr +="C</p>";
+  ptr +="<p>Humidity: ";
+  ptr +=(int)HumidityWeb;
+  ptr +="%</p>";
+  
+  ptr +="</div>\n";
+  ptr +="</body>\n";
+  ptr +="</html>\n";
+  return ptr;
 }
-*/
-void setup(void){
-   EEPROM.begin(512);  //Initialize EEPROM
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-  Serial.println("");
-
-  // Wait for connection
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
-
-  server.on("/", handleRoot);
-  server.on("/page2", handlePage2);
- // server.on("/page3", handlePage3);
-
-  server.begin();
-  Serial.println("HTTP server started"); 
-}
-
-void loop(void){
-  delay(10);
-  server.handleClient();
-}
-=======
-#include <ESP8266WiFi.h>
-#include <ESP8266WebServer.h>
-#include "arduino_secret.h"
-#include <EEPROM.h>
-
-#include "page1.h"
-#include "page2.h"
-//#include "page3.h"
-
-ESP8266WebServer server(80);
-
-void handleRoot() {
-  Serial.println("GET /");
-  server.send(200, "text/html", htmlPage1);
-}
-
-void handlePage2() {
-  Serial.println("GET /page2");
-  if (server.hasArg("ssid")&& server.hasArg("Password")&& server.hasArg("IP")&&server.hasArg("GW") ) {//If all form fields contain data call handelSubmit()
-    handleSubmit();
-  }
-  else {//Redisplay the form
-  server.send(200, "text/html", htmlPage2);
-}
-}
-void handleSubmit(){//dispaly values and write to memmory
-  String response="<p>The ssid is ";
- response += server.arg("ssid");
- response +="<br>";
- response +="And the password is ";
- response +=server.arg("Password");
- response +="<br>";
- response +="And the IP Address is ";
- response +=server.arg("IP");
- response +="</P><BR>";
- response +="<H2><a href=\"/\">go home</a></H2><br>";
-
- server.send(200, "text/html", response);
- //calling function that writes data to memory 
- write_to_Memory(String(server.arg("ssid")),String(server.arg("Password")),String(server.arg("IP")),String(server.arg("GW")));
-}
-//Write data to memory
-/**
- * We prepping the data strings by adding the end of line symbol I decided to use ";". 
- * Then we pass it off to the write_EEPROM function to actually write it to memmory
- */
-void write_to_Memory(String s,String p,String i, String g){
- s+=";";
- write_EEPROM(s,0);
- p+=";";
- write_EEPROM(p,100);
- i+=";";
- write_EEPROM(i,200); 
- g+=";";
- write_EEPROM(g,220); 
- EEPROM.commit();
-}
-//write to memory
-void write_EEPROM(String x,int pos){
-  for(int n=pos;n<x.length()+pos;n++){
-     EEPROM.write(n,x[n-pos]);
-  }
-}
-
-
-
-
-
-/*
-void handlePage3() {
-  Serial.println("GET /page3");
-  server.send(200, "text/html", htmlPage3);
-}
-*/
-void setup(void){
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-  Serial.println("");
-
-  // Wait for connection
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.print("Connected to ");
-  Serial.println(ssid);
-  Serial.print("IP address: ");
-  Serial.println(WiFi.localIP());
-
-  server.on("/", handleRoot);
-  server.on("/page2", handlePage2);
- // server.on("/page3", handlePage3);
-
-  server.begin();
-  Serial.println("HTTP server started");
-}
-
-void loop(void){
-  server.handleClient();
-}
->>>>>>> 59d9bd720c0e9560d22dadcb5ab3eef2e8f24cec
