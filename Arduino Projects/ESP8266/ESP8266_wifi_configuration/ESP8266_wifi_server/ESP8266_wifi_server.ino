@@ -28,13 +28,15 @@ void loop() {
     wifiManager.autoConnect("Electro-Med WiFi Manager");
     Serial.println("connected :)");
 
-    if (WiFi.status() == WL_CONNECTED)
+    while (WiFi.status() == WL_CONNECTED)
     {
       digitalWrite(LED, HIGH);
       
     }
-    else {
+   
+  }
+
+   else {
       digitalWrite(LED, LOW);
     }
-  }
 }

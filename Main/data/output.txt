@@ -1,1 +1,1 @@
-{'PM2_5': u'32.0 \xb5g/m\xb3', 'Tempreture': u'30', 'Wind_direction': u'70.0 degrees', 'O3': u'56.64 \xb5g/m\xb3', 'Wind_speed': u' 9.17 m/s', 'AQI': '56', 'primary_pollutant': 'O3', 'NO2': u'34.59 \xb5g/m\xb3', 'Humidity': u'35.0 %'}
+{'NO2': '24.3 µg/m³', 'AQI': '215', 'O3': '95.0 µg/m³', 'PM2_5': '164.0 µg/m³', 'primary_pollutant': 'O3', 'Tempreture': '21', 'Humidity': '46.0 %', 'Wind_speed': ' 2.24 m/s', 'Wind_direction': '0.0 degrees'}

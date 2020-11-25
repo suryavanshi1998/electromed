@@ -9,7 +9,7 @@ from text_to_image_final import genAirQualityImage,genAaqi,temp_hum,windImage
 def get_data_via_api():
 	
 
-	r = requests.get("http://api.airpollutionapi.com/1.0/aqi?lat=25.302547&lon=82.983220&APPID=qsfmma0bkgr296g79ogrhfubg5")
+	r = requests.get("http://api.airpollutionapi.com/1.0/aqi?lat=25.302547&lon=82.983220&APPID=lf9sj44r2tvt1ks3na79fp2tcl")
 	res = r.json()
 		
 		  
@@ -149,7 +149,7 @@ def get_data_via_api():
 
 	a = str(data)
 		
-	file = open("home/pi/Desktop/main/data/output.txt", "w")
+	file = open("data/output.txt", "w")
 	file.write(a)
 	file.close()			
 							

@@ -7,42 +7,36 @@
 #include <Wire.h>
 #include "RTClib.h"
 #include <WiFiUdp.h>
-#include <DHT.h>
-#include <FS.h>
+//#include <DHT.h>
+//#include <FS.h>
 #define trigger 13
 #define LED 12
 #define power 14
-#define DHTPin 2 
-#define DHTTYPE DHT22   
-DHT dht(DHTPin, DHTTYPE); 
+//#define DHTPin 2
+//#define DHTTYPE DHT22
+//DHT dht(DHTPin, DHTTYPE);
 
-char static_ip[16] = "192.168.1.184";
-char static_gw[16] = "192.168.1.1";
-char static_sn[16] = "255.255.255.0";
 ESP8266WebServer server(80);
 WiFiUDP ntpUDP;
-const long utcOffsetInSeconds = 28800;
+//const long utcOffsetInSeconds = 28800;
 const int ledPin =  12; // the LED pin number connected
 int ledState = LOW;             // used to set the LED state
-unsigned long previousMillis = 0;  //will store last time LED was blinked
-const long period = 60000;
+
 DateTime now;
-char daysOfTheWeek[7][12] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
+
 RTC_DS3231 rtc;
 
 
 
-String SendHTML(float TemperatureWeb, float HumidityWeb, String TimeWeb, String DateWeb);
-void handle_OnConnect();
-void handle_NotFound();
+//String SendHTML(float TemperatureWeb, float HumidityWeb, String TimeWeb, String DateWeb);
 
-float Temperature;
-float Humidity;
+String Temperature;
+String Humidity;
 String formattedTime;
 String Date;
-int Day;
-int Month;
-int Year;
+int D;
+int Mo;
+int Y;
 
 
 void setup()
@@ -54,7 +48,8 @@ void setup()
   pinMode(power, OUTPUT);
   Serial.println("wifi mode");
   delay(1000);
-  /*
+    ResetSettings();
+  
     String returnedString = aqi_weather_api ();
     delay(1000);
     json_parse (returnedString);
@@ -64,10 +59,11 @@ void setup()
     delay(1000);
     String returned_DateTime =  json_parse_time (returned_String);
     delay(1000);
+    webpage();
     // Serial.print(returned_DateTime);
-    rtc_time(returned_DateTime);
-    show();
-  */
+   // rtc_time(returned_DateTime);
+   // show();
+  
 
 
 
@@ -75,7 +71,7 @@ void setup()
 void loop() {
 
   server.handleClient();
-  ResetSettings();
+ // ResetSettings();
   delay(1000);
   if (WiFi.status() == WL_CONNECTED)
   {
@@ -83,7 +79,7 @@ void loop() {
 
 
     digitalWrite(LED, HIGH);
-    millis_api();
+   // millis_api();
     /* String returnedString = aqi_weather_api ();
       //Serial.println(returnedString);
       delay(1000);
@@ -228,11 +224,11 @@ String json_parse (String input) {
   status = root["status"].as<String>();
   root["status"] = status;
 
-  String temp = root["data"]["temp"];
-  temp = root["data"]["temp"].as<String>();
-  root["data"]["temp"] = temp;
+  //  Temperature = root["data"]["temp"];
+  Temperature = root["data"]["temp"].as<String>();
+  root["data"]["temp"] = Temperature;
 
-  String Humidity  = root["data"]["aqiParams"][5]["value"];
+  //Humidity  = root["data"]["aqiParams"][5]["value"];
   Humidity = root["data"]["aqiParams"][5]["value"].as<String>();
   root["data"]["aqiParams"][5]["value"] = Humidity;
 
@@ -250,7 +246,7 @@ String json_parse (String input) {
   Serial.print(status);
   Serial.print("\n");
   Serial.print("Temp-->");
-  Serial.print(temp);
+  Serial.print(Temperature);
   Serial.print("\n");
   Serial.print("humidity-->");
   Serial.print(Humidity);
@@ -260,7 +256,7 @@ String json_parse (String input) {
   Serial.print("\n");
   Serial.print("wind direction-->");
   Serial.print(wind_direction);
-  return temp,Humidity;
+  return Temperature, Humidity;
 
 }
 
@@ -306,6 +302,7 @@ String json_parse_time (String input2) {
 void rtc_time(String date_time) {
 
 
+
   String Year = date_time.substring(1, 4);
   String Month = date_time.substring(5, 7);
   String Day = date_time.substring(9, 10);
@@ -348,6 +345,7 @@ void rtc_time(String date_time) {
 
 void show()
 {
+  char daysOfTheWeek[7][12] = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
   now = rtc.now();
   delay(500);
   Serial.print("\n");
@@ -371,6 +369,11 @@ void show()
 }
 
 void ResetSettings() {
+
+
+  char static_ip[16] = "192.168.1.184";
+  char static_gw[16] = "192.168.1.1";
+  char static_sn[16] = "255.255.255.0";
   if (digitalRead(trigger) == HIGH) {
     delay(500);
 
@@ -386,12 +389,14 @@ void ResetSettings() {
 
 
     wifiManager.setSTAStaticIPConfig(_ip, _gw, _sn);
-    wifiManager.autoConnect("CIRCUIT DIGEST WiFi Manager");
+    wifiManager.autoConnect("Electro-Med wifi manager");
     Serial.println("connected :)");
   }
 }
 
 void millis_api() {
+  const long period = 60000;
+  unsigned long previousMillis = 0;  //will store last time LED was blinked
   unsigned long currentMillis = millis(); // store the current time
   if ((currentMillis - previousMillis)  >= period) { // check if 1000ms passed
 
@@ -412,6 +417,7 @@ void millis_api() {
     // Serial.print(returned_DateTime);
     rtc_time(returned_DateTime);
     show();
+
     webpage();
     previousMillis = currentMillis;
   }
@@ -429,9 +435,9 @@ void webpage() {
 void handle_OnConnect() {
 
 
-  //Date = String(currentYear) + "-" + String(currentMonth) + "-" + String(monthDay);
-  Temperature = dht.readTemperature(); 
-  Humidity = dht.readHumidity();
+  //  Date = String(currentYear) + "-" + String(currentMonth) + "-" + String(monthDay);
+  Temperature = Temperature;
+  Humidity = Humidity;
   server.send(200, "text/html", SendHTML(Temperature, Humidity, formattedTime, Date));
 }
 
@@ -440,7 +446,7 @@ void handle_NotFound() {
 }
 
 
-String SendHTML(float TemperatureWeb, float HumidityWeb, String TimeWeb, String DateWeb) {
+String SendHTML(String TemperatureWeb, String HumidityWeb, String TimeWeb, String DateWeb) {
   String ptr = "<!DOCTYPE html> <html>\n";
   ptr += "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
   ptr += "<title>ESP8266 Global Server</title>\n";
@@ -457,11 +463,11 @@ String SendHTML(float TemperatureWeb, float HumidityWeb, String TimeWeb, String 
   ptr += (String)TimeWeb;
   ptr += "</p>";
   ptr += "<p>Temperature: ";
-  ptr += (int)TemperatureWeb;
+  ptr += (String)TemperatureWeb;
   ptr += "C</p>";
   ptr += "<p>Humidity: ";
-  ptr += (int)HumidityWeb;
-  ptr += "%</p>";
+  ptr += (String)HumidityWeb;
+  // ptr += "%</p>";
 
   ptr += "</div>\n";
   ptr += "</body>\n";

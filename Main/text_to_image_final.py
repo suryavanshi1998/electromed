@@ -10,8 +10,8 @@ now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 
 def genAirQualityImage (data):
-	large_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 60)
-	medium_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 14)
+	large_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 60)
+	medium_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 14)
 
 
 	no2= data["NO2"]
@@ -19,7 +19,7 @@ def genAirQualityImage (data):
 	O3= data["O3"]
 	pm2_5= data["PM2_5"]
 
-	img = PIL.Image.new(mode ="RGBA", size = (197, 111))
+	img = PIL.Image.new(mode ="RGBA", size = (197, 111), color=(0,0,0))
 	
 	
 	d = ImageDraw.Draw(img)
@@ -35,19 +35,19 @@ def genAirQualityImage (data):
 	d.text((10,50), "PM2.5:",font=medium_font, fill=(255,255,255,255))
 	d.text((110,50), pm2_5,font=medium_font, fill=(255,255,255,255))
 	#img.show()
-	img.save("/home/pi/Desktop/main/output/airImage.png") 
+	img.save("output/airImage.png") 
 
 
 def genAaqi (data):
-	large_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 60)
-	medium_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 14)
+	large_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 60)
+	medium_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 14)
 
 	#no2=data["NO2"]
 	aqi= data["AQI"]
 	#O3= data["O3"]
 	pm2_5= data["PM2_5"]
 	Primary_pollutant = data["primary_pollutant"]
-	img = PIL.Image.new(mode ="RGBA", size = (197, 111))
+	img = PIL.Image.new(mode ="RGBA", size = (197, 111),color=(0,0,0))
 	
 	
 	
@@ -66,14 +66,14 @@ def genAaqi (data):
 	d.text((120,85), aqi,font=medium_font, fill=(255,255,255,255))
 	
 	#img.show()
-	img.save("/home/pi/Desktop/main//output/aqiImage.png") 
+	img.save("output/aqiImage.png") 
 
 
 
 def temp_hum (data):
 	
-	large_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 60)
-	medium_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 14)
+	large_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 60)
+	medium_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 14)
 	tempreture= data["Tempreture"]
 	humidity= data["Humidity"]
 	
@@ -93,11 +93,11 @@ def temp_hum (data):
 	d.text((10,68), "Humidity:",font=medium_font, fill=(255,255,255,255))
 	d.text((120,68), humidity,font=medium_font, fill=(255,255,255,255))
 	#img.show()
-	img.save("/home/pi/Desktop/main/output/temp_hum.png") 
+	img.save("output/temp_hum.png") 
 
 def windImage(data):
-	large_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 60)
-	medium_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 14)
+	large_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 60)
+	medium_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 14)
 
 	#tempreture= data["Tempreture"]
 	#humidity= data["Humidity"]
@@ -105,7 +105,7 @@ def windImage(data):
 	wind_direction= data["Wind_direction"]
 
 
-	img = PIL.Image.new(mode ="RGBA", size = (197, 111))
+	img = PIL.Image.new(mode ="RGBA", size = (197, 111),color=(0,0,0))
 	
 	
 	d = ImageDraw.Draw(img)
@@ -121,12 +121,12 @@ def windImage(data):
 	d.text((100,80), wind_direction,font=medium_font, fill=(255,255,255,255))
 
 	#img.show()
-	img.save("/home/pi/Desktop/main/output/wind_speed_dir.png") 
+	img.save("output/wind_speed_dir.png") 
 
 #used for display time only
 def gentime():
-	large_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 60)
-	medium_font = ImageFont.truetype("/home/pi/Desktop/main/fonts/Univers_65_Bold.ttf", 14)
+	large_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 60)
+	medium_font = ImageFont.truetype("fonts/Univers_65_Bold.ttf", 14)
 	#base = Image.open('/home/pi/Desktop/main/background/background.jpg').convert('RGBA')
 
 	# make a blank image for the text, initialized to transparent text color
@@ -140,5 +140,5 @@ def gentime():
 	d.text((2,5), current_time,font=large_font, fill=(255,255,255,255))
 
 	img.show()
-	img.save("path/output/time.png") 
+	img.save("data/output/time.png") 
 #gentime()
