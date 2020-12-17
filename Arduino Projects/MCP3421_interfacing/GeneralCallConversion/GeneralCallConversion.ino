@@ -2,11 +2,11 @@
 #include <MCP342x.h>
 
 /* Demonstrate the use of generalCallConversion(). This method is
- * useful to simultaneously instruct several MCP342x devices to begin
- * a one-shot analogue conversion, using the most recent
- * configuration. The results must be read back individually from each
- * device.
- */
+   useful to simultaneously instruct several MCP342x devices to begin
+   a one-shot analogue conversion, using the most recent
+   configuration. The results must be read back individually from each
+   device.
+*/
 
 
 // 0x68 is the default address for all MCP342x devices
@@ -15,7 +15,7 @@ MCP342x adc = MCP342x(address);
 
 // Configuration settings
 MCP342x::Config config(MCP342x::channel1, MCP342x::oneShot,
-		       MCP342x::resolution18, MCP342x::gain1);
+                       MCP342x::resolution18, MCP342x::gain1);
 
 // Configuration/status read back from the ADC
 MCP342x::Config status;
@@ -36,32 +36,32 @@ bool ledLevel = false;
 
 void setup(void)
 {
-  Serial.begin(9600);
+  Serial.begin(115200);
   Wire.begin();
 
   // Enable power for MCP342x
   pinMode(9, OUTPUT);
   digitalWrite(9, HIGH);
-  
+
   pinMode(led, OUTPUT);
-    
+  Serial.println("Test");
   // Reset devices
-  MCP342x::generalCallReset();
-  delay(1); // MC342x needs 300us to settle
-  
+ // MCP342x::generalCallReset();
+  delay(100); // MC342x needs 300us to settle
+  Serial.println("Test");
   // Check device present
   Wire.requestFrom(address, (uint8_t)1);
   if (!Wire.available()) {
     Serial.print("No device found at address ");
     Serial.println(address, HEX);
-    while (1)
+  // while (1)
       ;
   }
 
   // Configure the device with the desired settings. If there are
   // multiple devices you must do this for each one.
   adc.configure(config);
-  
+
   // First time loop() is called start a conversion
   startConversion = true;
 }
@@ -77,12 +77,12 @@ void loop(void)
     MCP342x::generalCallConversion();
     startConversion = false;
   }
-  
+
   err = adc.read(value, status);
-  if (!err && status.isReady()) { 
+  if (!err && status.isReady()) {
     // For debugging purposes print the return value.
     Serial.print("Value: ");
-    Serial.println(float value);
+    Serial.println(value);
     Serial.print("Config: 0x");
     Serial.println((int)config, HEX);
     Serial.print("Convert error: ");
@@ -96,5 +96,5 @@ void loop(void)
     digitalWrite(led, ledLevel);
     lastLedFlash = millis();
   }
-    
+delay(1000);
 }

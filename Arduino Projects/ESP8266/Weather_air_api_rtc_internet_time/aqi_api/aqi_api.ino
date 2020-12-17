@@ -1,5 +1,4 @@
 #include <ESP8266WiFi.h>          //https://github.com/esp8266/Arduino
-//needed for library
 #include <ArduinoJson.h>
 #include <DNSServer.h>
 #include <ESP8266WebServer.h>
@@ -7,6 +6,7 @@
 #include <Wire.h>
 #include "RTClib.h"
 #include <WiFiUdp.h>
+#include "html.h"
 //#include <DHT.h>
 //#include <FS.h>
 #define trigger 13
@@ -15,63 +15,63 @@
 //#define DHTPin 2
 //#define DHTTYPE DHT22
 //DHT dht(DHTPin, DHTTYPE);
+DateTime now;
+RTC_DS3231 rtc;
+WiFiUDP ntpUDP;
+
+unsigned long period = 20000;
+unsigned long previousMillis = 0;  //will store last time LED was blinked
+//const long timeoutTime = 2000;
+// store the current time
 
 ESP8266WebServer server(80);
-WiFiUDP ntpUDP;
-//const long utcOffsetInSeconds = 28800;
+
 const int ledPin =  12; // the LED pin number connected
 int ledState = LOW;             // used to set the LED state
 
-DateTime now;
-
-RTC_DS3231 rtc;
-
-
-
-//String SendHTML(float TemperatureWeb, float HumidityWeb, String TimeWeb, String DateWeb);
-
-String Temperature;
-String Humidity;
 String formattedTime;
 String Date;
 int D;
 int Mo;
 int Y;
 
+String mainString[10];
 
 void setup()
 {
+
   Serial.begin(115200);
   Wire.begin();
   pinMode(trigger, INPUT);
   pinMode(LED, OUTPUT);
   pinMode(power, OUTPUT);
   Serial.println("wifi mode");
-  delay(1000);
-    ResetSettings();
-  
-    String returnedString = aqi_weather_api ();
-    delay(1000);
-    json_parse (returnedString);
-    delay(1000);
-    String returned_String = time_api ();
-    //Serial.println(returnedString);
-    delay(1000);
-    String returned_DateTime =  json_parse_time (returned_String);
-    delay(1000);
-    webpage();
-    // Serial.print(returned_DateTime);
-   // rtc_time(returned_DateTime);
-   // show();
-  
+  // delay(30000);
+  // ResetSettings();
 
+  /* String returnedString = aqi_weather_api ();
+        //Serial.println(returnedString);
+        delay(1000);
 
+        json_parse (returnedString);
+        delay(1000);
 
+        String returned_String = time_api ();
+        //Serial.println(returnedString);
+        delay(1000);
+
+        String returned_DateTime =  json_parse_time (returned_String);
+        delay(1000);
+        //  Serial.print("test....");
+        // Serial.print(returned_DateTime);
+        rtc_time(returned_DateTime);
+        show();*/
 }
+
 void loop() {
 
   server.handleClient();
- // ResetSettings();
+  //  ResetSettings();
   delay(1000);
   if (WiFi.status() == WL_CONNECTED)
   {
@@ -79,44 +79,47 @@ void loop() {
 
 
     digitalWrite(LED, HIGH);
-   // millis_api();
+    millis_api();
     /* String returnedString = aqi_weather_api ();
-      //Serial.println(returnedString);
-      delay(1000);
+       //Serial.println(returnedString);
+       delay(1000);
 
-      json_parse (returnedString);
-      delay(1000);
+       json_parse (returnedString);
+       delay(1000);
 
-      String returned_String = time_api ();
-      //Serial.println(returnedString);
-      delay(1000);
+       String returned_String = time_api ();
+       //Serial.println(returnedString);
+       delay(1000);
 
-      String returned_DateTime =  json_parse_time (returned_String);
-      delay(1000);
-      //  Serial.print("test....");
-      // Serial.print(returned_DateTime);
-      rtc_time(returned_DateTime);
-      show();*/
+       String returned_DateTime =  json_parse_time (returned_String);
+       delay(1000);
+       //  Serial.print("test....");
+       // Serial.print(returned_DateTime);
+       rtc_time(returned_DateTime);
+       show();
+    */
+
 
   }
   else {
     digitalWrite(LED, LOW);
   }
+
 }
 
 String time_api () {
 
 
-  unsigned long currentTime = millis();
-  // Previous time
-  unsigned long previousTime = 0;
+  //unsigned long currentTime = millis();
+  //  Previous time
+  //unsigned long previousTime = 0;
   // Define timeout time in milliseconds (example: 2000ms = 2s)
-  const long timeoutTime = 2000;
+  //const long timeoutTime = 2000;
 
   const char* host = "api.timezonedb.com";
   // const char* host = "20.49.104.6";
 
-  Serial.print("connecting to ");
+  Serial.println("connecting to ");
   Serial.println(host);
 
   WiFiClient client;
@@ -136,15 +139,16 @@ String time_api () {
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" +
                "Connection: close\r\n\r\n");
-  unsigned long timeout = millis();
+  // unsigned long timeout1 = millis();
 
   while (client.available() == 0) {
-    if (millis() - timeout > 5000) {
-      Serial.println(">>> Client Timeout !");
-      client.stop();
-      return "Client Timeout";
-    }
+    // if (millis() - timeout1 > 5000) {
+    Serial.println(">>> Client Not Avilable !");
+    //client.stop();
+    return "Client Timeout";
+    delay(1000);
   }
+
   delay(400);
   String input2 = "";
   while (client.available()) {
@@ -161,13 +165,13 @@ String time_api () {
 String aqi_weather_api () {
 
 
-  unsigned long currentTime = millis();
+  //unsigned long currentTime = millis();
   // Previous time
-  unsigned long previousTime = 0;
+  // unsigned long previousTime = 0;
   // Define timeout time in milliseconds (example: 2000ms = 2s)
-  const long timeoutTime = 2000;
 
-  const char* host = "35.154.55.24";
+
+  const char* host = "3.154.55.24";
 
   Serial.print("connecting to ");
   Serial.println(host);
@@ -180,7 +184,7 @@ String aqi_weather_api () {
   }
 
 
-  String url = "http://api.airpollutionapi.com/1.0/aqi?lat=26.8718431&lon=80.9459051&APPID=qsfmma0bkgr296g79ogrhfubg5";
+  String url = "http://api.airpollutionapi.com/1.0/aqi?lat=26.8718431&lon=80.9459051&APPID=lf9sj44r2tvt1ks3na79fp2tcl";
 
   Serial.print("Requesting URL: ");
   Serial.println(url);
@@ -188,15 +192,14 @@ String aqi_weather_api () {
   client.print(String("GET ") + url + " HTTP/1.1\r\n" +
                "Host: " + host + "\r\n" +
                "Connection: close\r\n\r\n");
-  unsigned long timeout = millis();
+  // unsigned long timeout = millis();
 
   while (client.available() == 0) {
-    if (millis() - timeout > 5000) {
-      Serial.println(">>> Client Timeout !");
-      client.stop();
-      return "Client Timeout";
-    }
+    Serial.println(">>> Client Not Avilable !");
+    //client.stop();
+    return "Client Timeout";
   }
+
   delay(400);
   String input = "";
   while (client.available()) {
@@ -213,71 +216,34 @@ String aqi_weather_api () {
 
 
 String json_parse (String input) {
-  // void apirequest ();
   // Serial.println(input2);
   DynamicJsonBuffer jsonBuffer;
   JsonObject& root = jsonBuffer.parseObject(input);
 
-
-
   String status = root["status"];
   status = root["status"].as<String>();
-  root["status"] = status;
 
-  //  Temperature = root["data"]["temp"];
-  Temperature = root["data"]["temp"].as<String>();
-  root["data"]["temp"] = Temperature;
-
-  //Humidity  = root["data"]["aqiParams"][5]["value"];
-  Humidity = root["data"]["aqiParams"][5]["value"].as<String>();
-  root["data"]["aqiParams"][5]["value"] = Humidity;
-
-  String wind_speed  = root["data"]["aqiParams"][6]["value"];
-  wind_speed = root["data"]["aqiParams"][6]["value"].as<String>();
-  root["data"]["aqiParams"][6]["value"] = wind_speed;
-
-
-  String wind_direction  = root["data"]["aqiParams"][7]["value"];
-  wind_direction = root["data"]["aqiParams"][7]["value"].as<String>();
-  root["data"]["aqiParams"][7]["value"] = wind_direction;
+  mainString[0] = root["data"]["temp"].as<String>();
+  mainString[1] = root["data"]["aqiParams"][5]["value"].as<String>();
+  mainString[2] = root["data"]["aqiParams"][6]["value"].as<String>();
+  mainString[3] =  root["data"]["aqiParams"][7]["value"].as<String>();
 
   String output;
   Serial.print("status-->");
   Serial.print(status);
   Serial.print("\n");
-  Serial.print("Temp-->");
-  Serial.print(Temperature);
-  Serial.print("\n");
-  Serial.print("humidity-->");
-  Serial.print(Humidity);
-  Serial.print("\n");
-  Serial.print("wind speed-->");
-  Serial.print(wind_speed);
-  Serial.print("\n");
-  Serial.print("wind direction-->");
-  Serial.print(wind_direction);
-  return Temperature, Humidity;
-
 }
-
-
 
 String json_parse_time (String input2) {
 
   DynamicJsonBuffer jsonBuffer1;
   JsonObject& root = jsonBuffer1.parseObject(input2);
 
-
-
   String status = root["status"];
   status = root["status"].as<String>();
-  root["status"] = status;
 
   String date_time = root["formatted"];
   date_time = root["formatted"].as<String>();
-  root["data"]["formatted"] = date_time;
-
-
 
   String output;
   Serial.print("status  :");
@@ -294,14 +260,10 @@ String json_parse_time (String input2) {
      Serial.print(date);
   */
   return date_time;
-
-
 }
 
 
 void rtc_time(String date_time) {
-
-
 
   String Year = date_time.substring(1, 4);
   String Month = date_time.substring(5, 7);
@@ -311,9 +273,9 @@ void rtc_time(String date_time) {
   String Minute = date_time.substring(14, 16);
   String Second = date_time.substring(17, 19);
 
-  int Y = Year.toInt();
-  int Mo = Month.toInt();
-  int D = Day.toInt();
+  Y = Year.toInt();
+  Mo = Month.toInt();
+  D = Day.toInt();
 
   int H = Hour.toInt();
   int M = Minute.toInt();
@@ -341,7 +303,6 @@ void rtc_time(String date_time) {
 
   rtc.adjust(DateTime(Y, Mo, D, H, M, S));
 }
-
 
 void show()
 {
@@ -395,11 +356,9 @@ void ResetSettings() {
 }
 
 void millis_api() {
-  const long period = 60000;
-  unsigned long previousMillis = 0;  //will store last time LED was blinked
-  unsigned long currentMillis = millis(); // store the current time
-  if ((currentMillis - previousMillis)  >= period) { // check if 1000ms passed
+  unsigned long currentMillis = micros() / 1000;
 
+  if ((currentMillis - previousMillis)  > period) { // check if 1000ms passed
     String returnedString = aqi_weather_api ();
     //Serial.println(returnedString);
     delay(1000);
@@ -410,16 +369,17 @@ void millis_api() {
     String returned_String = time_api ();
     //Serial.println(returnedString);
     delay(1000);
-
+    Serial.print("Test...\n");
     String returned_DateTime =  json_parse_time (returned_String);
     delay(1000);
-    //  Serial.print("test....");
-    // Serial.print(returned_DateTime);
+
+    Serial.print(returned_DateTime);
     rtc_time(returned_DateTime);
     show();
 
     webpage();
-    previousMillis = currentMillis;
+    previousMillis = micros() / 1000;
+
   }
 }
 
@@ -428,25 +388,27 @@ void webpage() {
   server.on("/", handle_OnConnect);
   server.onNotFound(handle_NotFound);
   server.begin();
-
-
 }
 
 void handle_OnConnect() {
 
-
   //  Date = String(currentYear) + "-" + String(currentMonth) + "-" + String(monthDay);
-  Temperature = Temperature;
-  Humidity = Humidity;
-  server.send(200, "text/html", SendHTML(Temperature, Humidity, formattedTime, Date));
+  Serial.print("Test........\n");
+  String  Temperature  = mainString[0];
+  String  Humidity  = mainString[1];
+  String  Wind_speed  = mainString[2];
+  String  Wind_direction  = mainString[3];
+
+  server.send(200, "text/html", SendHTML(Temperature, Humidity, Wind_speed, Wind_direction, formattedTime, Date));
+
+
 }
 
 void handle_NotFound() {
   server.send(404, "text/plain", "Not found");
 }
-
-
-String SendHTML(String TemperatureWeb, String HumidityWeb, String TimeWeb, String DateWeb) {
+/*
+  String SendHTML(String TemperatureWeb, String HumidityWeb, String TimeWeb, String DateWeb) {
   String ptr = "<!DOCTYPE html> <html>\n";
   ptr += "<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
   ptr += "<title>ESP8266 Global Server</title>\n";
@@ -473,4 +435,16 @@ String SendHTML(String TemperatureWeb, String HumidityWeb, String TimeWeb, Strin
   ptr += "</body>\n";
   ptr += "</html>\n";
   return ptr;
-}
+  }
+  /*
+  String main_json() {
+
+  String temp = "";
+  String hum = "";
+  StaticJsonBuffer<200> jsonBuffer;
+  JsonObject& root = jsonBuffer.createObject();
+  root["Temp"] = "gps";
+  root["time"] = 1351824120;
+
+  root.printTo(Serial);
+  }*/
