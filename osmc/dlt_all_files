@@ -1,0 +1,6 @@
+import os
+import glob
+
+files = glob.glob('E:/Electro-Med/osmc/buffer/New folder')
+for f in files:
+    os.remove(f)

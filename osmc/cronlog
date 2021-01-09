@@ -1,0 +1,5 @@
+/home/osmc/launcher.sh: 4: /home/osmc/launcher.sh: : not found
+/home/osmc/launcher.sh: 5: cd: can't cd to /
+/home/osmc/launcher.sh: 6: cd: can't cd to /home/osmc/
+python: can't open file 'autoexec.py': [Errno 2] No such file or directory
+/home/osmc/launcher.sh: 8: cd: can't cd to /

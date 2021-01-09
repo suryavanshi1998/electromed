@@ -1,0 +1,12 @@
+#EXTCPlayListM3U::M3U
+
+#EXTINF:0,_Teachers_who_make_physics_boring_are_criminals__-Walter_Lewin_Feel_free_to_Shar.mp4
+/home/osmc/Movies/files/_Teachers_who_make_physics_boring_are_criminals__-Walter_Lewin_Feel_free_to_Shar.mp4
+
+#EXTINF:0,ELECTRIFYING_FUN_WITH_INDUCTION_-_ENGLISH_-_One_apparatus,_Many_experiments..mp4
+/home/osmc/Movies/files/ELECTRIFYING_FUN_WITH_INDUCTION_-_ENGLISH_-_One_apparatus,_Many_experiments..mp4
+
+#a.mp4
+#/home/osmc/Movies/files/a.mp4
+
+#/home/osmc/Movies/files/kgf.mp4

@@ -75,7 +75,7 @@ void loop(void)
      digitalWrite(led, ledLevel);
      lastLedFlash = millis();
     }*/
-  delay(2000);
+  delay(1000);
 
 }
 
@@ -118,11 +118,12 @@ void mode0() {
       //Serial.println(err);
       startConversion = true;
 
- 
- float  mv =  value *  1e-3 / (1 << 3*2  ) ; // = 1mv * ADC * / sample rate factor
-  mv = ((mv / (1 <<1))*2)*1000;            // divide by pga amplificati
-  //return(mv);
-  Serial.println(mv);
+
+      float  mv =  value *  1e-3 / (1 << 3 * 2  ) ; // = 1mv * ADC * / sample rate factor
+      mv = ((mv / (1 << 1)) * 2) * 1000;       // divide by pga amplificati
+      //return(mv);
+      Serial.print("mV");
+      Serial.println(mv);
 
     }
 

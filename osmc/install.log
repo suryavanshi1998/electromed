@@ -1,0 +1,45 @@
+Thu Jan 1 00:00:08 1970 Starting OSMC installer
+Thu Jan 1 00:00:13 1970 Detecting device we are running on
+Thu Jan 1 00:00:13 1970 Mounting boot filesystem
+Thu Jan 1 00:00:13 1970 Trying to mount to MNT_BOOT (/mnt/boot)
+Thu Jan 1 00:00:13 1970 Using device->boot: /dev/mmcblk0p1 and FS: fat32
+Thu Jan 1 00:00:13 1970 Filesystem defined by /mnt/boot/filesystem.tar.xz
+Thu Jan 1 00:00:13 1970 No preseed file was found
+Thu Jan 1 00:00:13 1970 Creating root partition
+Thu Jan 1 00:00:13 1970 From a root partition of /dev/mmcblk0p2, I have deduced a base device of /dev/mmcblk0
+Thu Jan 1 00:00:13 1970 Determined 320 MiB as end of first partition
+Thu Jan 1 00:00:13 1970 Calling mkpart for device: /dev/mmcblk0 and fs: ext4 with start 320MiB and end 100%
+Thu Jan 1 00:00:15 1970 Calling fmtpart for partition /dev/mmcblk0p2 and fstype ext4
+Thu Jan 1 00:01:17 1970 Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=2 blocks, Stripe width=1024 blocks
+465120 inodes, 1858560 blocks
+92928 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=1904214016
+57 block groups
+32768 blocks per group, 32768 fragments per group
+8160 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+
+Allocating group tables:  0/57     done                            
+Writing inode tables:  0/57     done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information:  0/5728/57     done
+
+
+Thu Jan 1 00:01:17 1970 Mounting root
+Thu Jan 1 00:01:17 1970 Trying to mount to MNT_ROOT (/mnt/root)
+Thu Jan 1 00:01:17 1970 Using device->root: /dev/mmcblk0p2
+Thu Jan 1 00:01:17 1970 Extracting files to root filesystem
+Thu Jan 1 00:01:17 1970 Starting extract process ...
+Thu Jan 1 00:01:17 1970 Extracting from /mnt/boot/filesystem.tar.xz
+Thu Jan 1 00:09:57 1970 Extraction of root filesystem completed
+Thu Jan 1 00:09:57 1970 Configuring bootloader
+Thu Jan 1 00:09:57 1970 Configuring bootloader: moving /boot to appropriate boot partition
+Thu Jan 1 00:10:00 1970 Configuring boot cmdline
+Thu Jan 1 00:10:00 1970 Configuring /etc/fstab
+Thu Jan 1 00:10:00 1970 Successful installation. Dumping log and rebooting system

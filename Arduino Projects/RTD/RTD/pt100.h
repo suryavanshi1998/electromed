@@ -3,6 +3,7 @@ int y2 = 200; double x2 = 18.53;
 int y3 = 190; double x3 = 22.78; 
 int y4 = 180; double x4 = 27.05; 
 int y5 = 170; double x5 = 31.28; 
+
 int y6 = 160; double x6 = 35.48; 
 int y7 = 150; double x7 = 39.65; 
 int y8 = 140; double x8 = 43.80; 

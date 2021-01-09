@@ -1,0 +1,1083 @@
+﻿2021-01-09 13:24:47.168 T:1916350480  NOTICE: -----------------------------------------------------------------------
+2021-01-09 13:24:47.168 T:1916350480  NOTICE: Starting Kodi (18.9). Platform: Linux ARM (Thumb) 32-bit
+2021-01-09 13:24:47.168 T:1916350480  NOTICE: Using Release Kodi x32 build (version for Raspberry Pi)
+2021-01-09 13:24:47.168 T:1916350480  NOTICE: Kodi compiled 2020-11-26 by GCC 8.3.0 for Linux ARM (Thumb) 32-bit version 4.19.152 (267160)
+2021-01-09 13:24:47.169 T:1916350480  NOTICE: Running on Open Source Media Center 2020.11-1, kernel: Linux ARM 32-bit version 4.19.122-2-osmc
+2021-01-09 13:24:47.215 T:1916350480  NOTICE: FFmpeg version/source: 4.0.4-Kodi
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: Host CPU: ARMv7 Processor rev 4 (v7l), 4 cores available
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: ARM Features: Neon disabled
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: special://xbmc/ is mapped to: /usr/share/kodi
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: special://xbmcbin/ is mapped to: /usr/lib/kodi
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: special://xbmcbinaddons/ is mapped to: /usr/lib/kodi/addons
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: special://masterprofile/ is mapped to: /home/osmc/.kodi/userdata
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: special://envhome/ is mapped to: /home/osmc
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: special://home/ is mapped to: /home/osmc/.kodi
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: special://temp/ is mapped to: /home/osmc/.kodi/temp
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: special://logpath/ is mapped to: /home/osmc/.kodi/temp
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: The executable running is: /usr/lib/kodi/kodi.bin
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: Local hostname: osmc
+2021-01-09 13:24:47.216 T:1916350480  NOTICE: Log File is located: /home/osmc/.kodi/temp/kodi.log
+2021-01-09 13:24:47.225 T:1916350480  NOTICE: -----------------------------------------------------------------------
+2021-01-09 13:24:47.253 T:1916350480    INFO: loading settings
+2021-01-09 13:24:47.293 T:1916350480  NOTICE: special://profile/ is mapped to: special://masterprofile/
+2021-01-09 13:24:47.368 T:1916350480   DEBUG: CSkinSettings: no <skinsettings> tag found
+2021-01-09 13:24:47.374 T:1916350480  NOTICE: Loaded settings file from special://xbmc/system/advancedsettings.xml
+2021-01-09 13:24:47.374 T:1916350480  NOTICE: Contents of special://xbmc/system/advancedsettings.xml are...
+                                            <?xml version="1.0" encoding="UTF-8" ?>
+                                            <!-- Do not modify! These are OSMC Optimised Settings for your device  !-->
+                                            <!-- If you wish to override any of these values, then create a file in /home/osmc/.kodi/userdata/advancedsettings.xml !-->
+                                            <!-- It will override these settings, and your settings will be preserved across OSMC updates !-->
+                                            <advancedsettings>
+                                              <imageres>540</imageres>
+                                              <fanartres>720</fanartres>
+                                              <splash>false</splash>
+                                              <handlemounting>0</handlemounting>
+                                              <samba>
+                                                <clienttimeout>30</clienttimeout>
+                                              </samba>
+                                              <gamesgeneral>
+                                                <enable>true</enable>
+                                              </gamesgeneral>
+                                            </advancedsettings>
+2021-01-09 13:24:47.374 T:1916350480 WARNING: CSettingsManager: missing version attribute
+2021-01-09 13:24:47.377 T:1916350480  NOTICE: No settings file to load (special://masterprofile/advancedsettings.xml)
+2021-01-09 13:24:47.377 T:1916350480  NOTICE: Default Video Player: VideoPlayer
+2021-01-09 13:24:47.377 T:1916350480  NOTICE: Default Audio Player: paplayer
+2021-01-09 13:24:47.377 T:1916350480  NOTICE: Disabled debug logging due to GUI setting. Level 0.
+2021-01-09 13:24:47.378 T:1916350480  NOTICE: Log level changed to "LOG_LEVEL_NORMAL"
+2021-01-09 13:24:47.378 T:1916350480  NOTICE: CMediaSourceSettings: loading media sources from special://masterprofile/sources.xml
+2021-01-09 13:24:47.970 T:1916350480  NOTICE: Running database version Addons27
+2021-01-09 13:24:48.615 T:1916350480  NOTICE: ADDON: audiodecoder.modplug v2.0.3 installed
+2021-01-09 13:24:48.615 T:1916350480  NOTICE: ADDON: audiodecoder.nosefart v2.0.2 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audiodecoder.sidplay v1.2.2 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audiodecoder.snesapu v2.0.2 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audiodecoder.timidity v2.0.5 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audioencoder.flac v2.0.6 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audioencoder.kodi.builtin.aac v1.0.0 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audioencoder.kodi.builtin.wma v1.0.0 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audioencoder.lame v2.0.4 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audioencoder.vorbis v2.0.4 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: audioencoder.wav v2.0.3 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.controller.default v1.0.8 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.controller.snes v1.0.8 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.libretro v1.1.1 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.libretro.2048 v1.0.0.115 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.libretro.beetle-bsnes v0.9.26.9 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.libretro.beetle-gba v0.9.36.9 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.libretro.beetle-pce-fast v0.9.38.14 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.libretro.bluemsx v0.0.1.14 installed
+2021-01-09 13:24:48.616 T:1916350480  NOTICE: ADDON: game.libretro.bnes v0.83.0.7 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.bsnes-mercury-balanced v0.94.0.7 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.dosbox v0.74.0.7 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.fceumm v0.0.1.22 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.gambatte v0.5.0.13 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.genplus v1.7.4.12 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.gw v1.6.3.6 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.mame2000 v0.37.0.10 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.mame2003 v0.78.0.26 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.mame2003_plus v0.0.1.38 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.meteor v1.4.0.7 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.mgba v0.8.3.16 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.nestopia v1.50.0.11 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.quicknes v1.0.0.14 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.scummvm v2.1.1.9 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.snes9x v1.60.0.14 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.stella v3.9.3.10 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.vba-next v1.0.2.9 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: game.libretro.vbam v2.1.3.11 installed
+2021-01-09 13:24:48.617 T:1916350480  NOTICE: ADDON: imagedecoder.mpo v1.1.2 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: imagedecoder.raw v2.1.2 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: inputstream.adaptive v2.4.6 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: inputstream.rtmp v2.0.9 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.global.audioengine v1.0.1 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.global.filesystem v1.0.2 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.global.general v1.0.3 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.global.gui v5.12.0 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.global.main v1.0.14 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.global.network v1.0.0 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.instance.audiodecoder v2.0.0 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.instance.audioencoder v2.0.0 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.instance.game v1.1.0 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.instance.imagedecoder v2.0.0 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.instance.inputstream v2.0.8 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.instance.peripheral v1.3.7 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.instance.pvr v5.10.3 installed
+2021-01-09 13:24:48.618 T:1916350480  NOTICE: ADDON: kodi.binary.instance.screensaver v2.0.0 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: kodi.binary.instance.vfs v2.0.0 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: kodi.binary.instance.videocodec v1.0.1 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: kodi.binary.instance.visualization v2.0.1 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: kodi.resource v1.0.0 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.album.universal v3.1.1 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.artists.universal v4.3.0 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.common.allmusic.com v3.2.0 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.common.fanart.tv v3.6.1 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.common.imdb.com v3.1.4 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.common.musicbrainz.org v2.2.1 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.common.theaudiodb.com v2.0.2 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.common.themoviedb.org v3.1.9 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.local v1.0.0 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.themoviedb.org v5.1.7 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: metadata.tvshows.themoviedb.org v3.1.0 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: peripheral.joystick v1.4.9 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: peripheral.xarcade v1.1.0 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: pvr.argustv v3.5.6 installed
+2021-01-09 13:24:48.619 T:1916350480  NOTICE: ADDON: pvr.demo v3.6.3 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.dvblink v4.7.3 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.dvbviewer v3.7.13 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.filmon v2.4.6 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.hdhomerun v3.5.1 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.hts v4.4.21 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.iptvsimple v3.9.8 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.mediaportal.tvserver v3.5.19 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.mythtv v5.10.19 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.nextpvr v3.3.21 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.njoy v3.4.3 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.octonet v0.7.1 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.pctv v2.4.7 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.sledovanitv.cz v1.9.0 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.stalker v3.4.10 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.teleboy v18.2.3 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.vbox v4.7.0 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.vdr.vnsi v3.6.4 installed
+2021-01-09 13:24:48.620 T:1916350480  NOTICE: ADDON: pvr.vuplus v3.28.9 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: pvr.waipu v0.2.3 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: pvr.wmc v2.4.6 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: pvr.zattoo v18.1.21 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: repository.xbmc.org v9.9.11 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.images.weathericons.default v1.1.8 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.af_za v9.0.10 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.am_et v9.0.7 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.ar_sa v9.0.7 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.az_az v9.0.3 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.be_by v9.0.13 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.bg_bg v9.0.21 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.bs_ba v9.0.5 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.ca_es v9.0.10 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.cs_cz v9.0.22 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.cy_gb v9.0.9 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.da_dk v9.0.23 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.de_de v9.0.21 installed
+2021-01-09 13:24:48.621 T:1916350480  NOTICE: ADDON: resource.language.el_gr v9.0.15 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.en_au v9.0.7 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.en_gb v2.0.1 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.en_nz v9.0.8 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.en_us v9.0.16 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.eo v9.0.5 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.es_ar v9.0.7 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.es_es v9.0.23 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.es_mx v9.0.9 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.et_ee v9.0.7 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.eu_es v9.0.13 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.fa_af v9.0.4 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.fa_ir v9.0.8 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.fi_fi v9.0.22 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.fo_fo v9.0.6 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.fr_ca v9.0.20 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.fr_fr v9.0.24 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.gl_es v9.0.13 installed
+2021-01-09 13:24:48.622 T:1916350480  NOTICE: ADDON: resource.language.he_il v9.0.11 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.hi_in v9.0.3 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.hr_hr v9.0.16 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.hu_hu v9.0.18 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.hy_am v9.0.4 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.id_id v9.0.10 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.is_is v9.0.14 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.it_it v9.0.17 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.ja_jp v9.0.10 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.ko_kr v9.0.10 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.lt_lt v9.0.22 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.lv_lv v9.0.12 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.mi v9.0.6 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.mk_mk v9.0.8 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.ml_in v9.0.1 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.mn_mn v9.0.4 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.ms_my v9.0.13 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.mt_mt v9.0.6 installed
+2021-01-09 13:24:48.623 T:1916350480  NOTICE: ADDON: resource.language.my_mm v9.0.6 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.nb_no v9.0.12 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.nl_nl v9.0.22 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.os_os v1.0.2 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.pl_pl v9.0.16 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.pt_br v9.0.25 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.pt_pt v9.0.11 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.ro_ro v9.0.13 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.ru_ru v9.0.18 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.si_lk v9.0.4 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.sk_sk v9.0.20 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.sl_si v9.0.10 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.sq_al v9.0.7 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.sr_rs v9.0.10 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.sr_rs@latin v9.0.7 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.sv_se v9.0.19 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.szl v9.0.7 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.ta_in v9.0.8 installed
+2021-01-09 13:24:48.624 T:1916350480  NOTICE: ADDON: resource.language.te_in v9.0.2 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: resource.language.tg_tj v9.0.6 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: resource.language.th_th v9.0.7 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: resource.language.uk_ua v9.0.11 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: resource.language.uz_uz v9.0.4 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: resource.language.vi_vn v9.0.6 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: resource.language.zh_cn v9.0.16 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: resource.language.zh_tw v9.0.23 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: resource.uisounds.kodi v1.0.0 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: screensaver.xbmc.builtin.black v1.0.33 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: screensaver.xbmc.builtin.dim v1.0.59 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: script.module.elementtree v1.2.8 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: script.module.osmccommon v0.0.1 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: script.module.osmcsetting.apfstore v0.0.1 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: script.module.osmcsetting.logging v0.0.1 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: script.module.osmcsetting.networking v0.0.3 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: script.module.osmcsetting.pi v0.0.1 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: script.module.osmcsetting.remotes v0.0.1 installed
+2021-01-09 13:24:48.625 T:1916350480  NOTICE: ADDON: script.module.osmcsetting.services v0.0.3 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: script.module.osmcsetting.updates v0.0.3 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: script.module.pil v1.1.7 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: script.module.pycryptodome v3.4.3 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: script.module.xmltodict v0.9.0 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: service.osmc.settings v0.0.1 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: skin.estouchy v2.0.28 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: skin.estuary v2.0.27 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: skin.osmc v18.5.0 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: skin.osmc.scope v18.5.0 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: vfs.libarchive v1.0.7 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: vfs.rar v2.3.2 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: vfs.sacd v1.0.4 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: vfs.sftp v1.0.6 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: webinterface.default v18.x-2.4.6 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: xbmc.addon v18.9 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: xbmc.core v0.1.0 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: xbmc.gui v5.14.0 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: xbmc.json v10.3.0 installed
+2021-01-09 13:24:48.626 T:1916350480  NOTICE: ADDON: xbmc.metadata v2.1.0 installed
+2021-01-09 13:24:48.627 T:1916350480  NOTICE: ADDON: xbmc.python v2.26.0 installed
+2021-01-09 13:24:48.627 T:1916350480  NOTICE: ADDON: xbmc.webinterface v1.0.0 installed
+2021-01-09 13:24:48.893 T:1916350480   ERROR: DBus error: org.freedesktop.DBus.Error.ServiceUnknown - The name org.freedesktop.UPower was not provided by any .service files
+2021-01-09 13:24:49.050 T:1885335776  NOTICE: Found 2 Lists of Devices
+2021-01-09 13:24:49.050 T:1885335776  NOTICE: Enumerated ALSA devices:
+2021-01-09 13:24:49.050 T:1885335776  NOTICE:     Device 1
+2021-01-09 13:24:49.050 T:1885335776  NOTICE:         m_deviceName      : @
+2021-01-09 13:24:49.050 T:1885335776  NOTICE:         m_displayName     : Default (bcm2835 ALSA bcm2835 ALSA)
+2021-01-09 13:24:49.050 T:1885335776  NOTICE:         m_displayNameExtra:
+2021-01-09 13:24:49.050 T:1885335776  NOTICE:         m_deviceType      : AE_DEVTYPE_PCM
+2021-01-09 13:24:49.050 T:1885335776  NOTICE:         m_channels        : FL, FR
+2021-01-09 13:24:49.050 T:1885335776  NOTICE:         m_sampleRates     : 8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,176400,192000
+2021-01-09 13:24:49.050 T:1885335776  NOTICE:         m_dataFormats     : AE_FMT_S16NE,AE_FMT_S16LE,AE_FMT_U8
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_streamTypes     : No passthrough capabilities
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:     Device 2
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_deviceName      : sysdefault:CARD=ALSA
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_displayName     : bcm2835 ALSA
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_displayNameExtra: bcm2835 ALSA
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_deviceType      : AE_DEVTYPE_PCM
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_channels        : FL, FR
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_sampleRates     : 8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,176400,192000
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_dataFormats     : AE_FMT_S16NE,AE_FMT_S16LE,AE_FMT_U8
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_streamTypes     : No passthrough capabilities
+2021-01-09 13:24:49.051 T:1885335776  NOTICE: Enumerated PI devices:
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:     Device 1
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_deviceName      : HDMI
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_displayName     : HDMI
+2021-01-09 13:24:49.051 T:1885335776  NOTICE:         m_displayNameExtra:
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_deviceType      : AE_DEVTYPE_HDMI
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_channels        : FL, FR
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_sampleRates     : 8000,11025,16000,22050,24000,32000,44100,48000,88200,96000,176400,192000
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_dataFormats     : AE_FMT_FLOAT,AE_FMT_S32NE,AE_FMT_S16NE,AE_FMT_S32LE,AE_FMT_S16LE,AE_FMT_FLOATP,AE_FMT_S32NEP,AE_FMT_S16NEP,AE_FMT_RAW
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_streamTypes     : STREAM_TYPE_AC3,STREAM_TYPE_EAC3,STREAM_TYPE_DTSHD_CORE,STREAM_TYPE_DTS_2048,STREAM_TYPE_DTS_1024,STREAM_TYPE_DTS_512
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:     Device 2
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_deviceName      : Analogue
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_displayName     : Analogue
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_displayNameExtra:
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_deviceType      : AE_DEVTYPE_PCM
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_channels        : FL, FR
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_sampleRates     : 48000
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_dataFormats     : AE_FMT_FLOAT,AE_FMT_S32LE,AE_FMT_S16LE,AE_FMT_FLOATP,AE_FMT_S32NEP,AE_FMT_S16NEP
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_streamTypes     : No passthrough capabilities
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:     Device 3
+2021-01-09 13:24:49.052 T:1885335776  NOTICE:         m_deviceName      : Both
+2021-01-09 13:24:49.053 T:1885335776  NOTICE:         m_displayName     : HDMI and Analogue
+2021-01-09 13:24:49.053 T:1885335776  NOTICE:         m_displayNameExtra:
+2021-01-09 13:24:49.053 T:1885335776  NOTICE:         m_deviceType      : AE_DEVTYPE_PCM
+2021-01-09 13:24:49.053 T:1885335776  NOTICE:         m_channels        : FL, FR
+2021-01-09 13:24:49.053 T:1885335776  NOTICE:         m_sampleRates     : 48000
+2021-01-09 13:24:49.053 T:1885335776  NOTICE:         m_dataFormats     : AE_FMT_FLOAT,AE_FMT_S32LE,AE_FMT_S16LE,AE_FMT_FLOATP,AE_FMT_S32NEP,AE_FMT_S16NEP
+2021-01-09 13:24:49.053 T:1885335776  NOTICE:         m_streamTypes     : No passthrough capabilities
+2021-01-09 13:24:49.260 T:1916350480  NOTICE: Raspberry PI firmware version: Mar 10 2020 16:00:17 
+                                            Copyright (c) 2012 Broadcom
+                                            version d5afe412e364adbdafc0394ac65e674091a56473 (clean) (release) (start_x)
+2021-01-09 13:24:49.260 T:1916350480  NOTICE: ARM mem: 768MB GPU mem: 256MB MPG2:0 WVC1:0
+2021-01-09 13:24:49.260 T:1916350480  NOTICE: cache.memorysize: 20MB
+2021-01-09 13:24:49.261 T:1916350480  NOTICE: Config:
+                                            aphy_params_current=819
+                                            arm_freq=1400
+                                            audio_pwm_mode=514
+                                            config_hdmi_boost=5
+                                            core_freq=400
+                                            desired_osc_freq=0x331df0
+                                            desired_osc_freq_boost=0x3c45b0
+                                            disable_commandline_tags=2
+                                            disable_l2cache=1
+                                            disable_overscan=1
+                                            disable_splash=1
+                                            display_hdmi_rotate=-1
+                                            display_lcd_rotate=-1
+                                            dphy_params_current=547
+                                            force_eeprom_read=1
+                                            force_pwm_open=1
+                                            framebuffer_ignore_alpha=1
+                                            framebuffer_swap=1
+                                            gpu_freq=300
+                                            hdmi_channel_map=8
+                                            init_uart_clock=0x2dc6c00
+                                            lcd_framerate=60
+                                            over_voltage_avs=62500
+                                            over_voltage_avs_boost=0x2932e
+                                            pause_burst_frames=1
+                                            program_serial_random=1
+                                            sdram_freq=450
+                                            sdtv_aspect=1
+                                            hdmi_force_cec_address:0=65535
+                                            hdmi_force_cec_address:1=65535
+                                            hdmi_ignore_cec_init:0=1
+                                            hdmi_pixel_freq_limit:0=0x9a7ec80
+                                            hdmi_pixel_freq_limit:1=0x9a7ec80
+2021-01-09 13:24:49.261 T:1916350480  NOTICE: Config:
+                                            device_tree=-
+                                            overlay_prefix=overlays/
+                                            hdmi_cvt:0=
+                                            hdmi_cvt:1=
+                                            hdmi_edid_filename:0=
+                                            hdmi_edid_filename:1=
+                                            hdmi_timings:0=
+                                            hdmi_timings:1=
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 640 x 480 with 640 x 480 @ 60.000000 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 640 x 480 with 640 x 480 @ 59.940063 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 640 x 480 with 640 x 480 @ 72.000000 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 640 x 480 with 640 x 480 @ 71.928070 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 640 x 480 with 640 x 480 @ 75.000000 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 800 x 600 with 800 x 600 @ 60.000000 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 800 x 600 with 800 x 600 @ 59.940063 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 800 x 600 with 800 x 600 @ 72.000000 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 800 x 600 with 800 x 600 @ 71.928070 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 800 x 600 with 800 x 600 @ 75.000000 Hz
+2021-01-09 13:24:49.264 T:1916350480  NOTICE: Found resolution 1024 x 768 with 1024 x 768 @ 60.000000 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1024 x 768 with 1024 x 768 @ 59.940063 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1024 x 768 with 1024 x 768 @ 70.000000 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1024 x 768 with 1024 x 768 @ 75.000000 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1152 x 864 with 1152 x 864 @ 75.000000 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1280 x 800 with 1280 x 800 @ 60.000000 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1280 x 800 with 1280 x 800 @ 59.940063 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1280 x 960 with 1280 x 960 @ 60.000000 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1280 x 960 with 1280 x 960 @ 59.940063 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1280 x 1024 with 1280 x 1024 @ 60.000000 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1280 x 1024 with 1280 x 1024 @ 59.940063 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1280 x 1024 with 1280 x 1024 @ 75.000000 Hz
+2021-01-09 13:24:49.265 T:1916350480  NOTICE: Found resolution 1360 x 768 with 1360 x 768 @ 60.000000 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1360 x 768 with 1360 x 768 @ 59.940063 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1440 x 900 with 1440 x 900 @ 60.000000 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1440 x 900 with 1440 x 900 @ 59.940063 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1440 x 900 with 1440 x 900 @ 75.000000 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1440 x 1080 with 1600 x 1200 @ 60.000000 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1440 x 1080 with 1600 x 1200 @ 59.940063 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1680 x 1050 with 1680 x 1050 @ 60.000000 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1680 x 1050 with 1680 x 1050 @ 59.940063 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 720 x 480 with 720 x 480 @ 60.000000 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 720 x 480 with 720 x 480 @ 59.940063 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1280 x 720 with 1280 x 720 @ 60.000000 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1280 x 720 with 1280 x 720 @ 59.940063 Hz
+2021-01-09 13:24:49.266 T:1916350480  NOTICE: Found resolution 1920 x 1080 with 1920 x 1080 @ 60.000000 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 1920 x 1080 with 1920 x 1080 @ 59.940063 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 720 x 576 with 720 x 576 @ 50.000000 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 1280 x 720 with 1280 x 720 @ 50.000000 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 1920 x 1080 with 1920 x 1080 @ 50.000000 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 1920 x 1080 with 1920 x 1080 @ 24.000000 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 1920 x 1080 with 1920 x 1080 @ 23.976025 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 1920 x 1080 with 1920 x 1080 @ 25.000000 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 1920 x 1080 with 1920 x 1080 @ 30.000000 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found resolution 1920 x 1080 with 1920 x 1080 @ 29.970032 Hz
+2021-01-09 13:24:49.267 T:1916350480  NOTICE: Found (1920x1080@60.000000) at 51, setting to RES_DESKTOP at 16
+2021-01-09 13:24:49.268 T:1916350480  NOTICE: EGL_VERSION = 1.4
+2021-01-09 13:24:49.268 T:1916350480  NOTICE: EGL_VENDOR = Broadcom
+2021-01-09 13:24:49.269 T:1916350480  NOTICE: EGL_EXTENSIONS = EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_vg_parent_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_lock_surface
+2021-01-09 13:24:49.269 T:1916350480  NOTICE: EGL_CLIENT_EXTENSIONS = NULL
+2021-01-09 13:24:49.270 T:1916350480  NOTICE: Checking resolution 16
+2021-01-09 13:24:49.570 T:1916350480  NOTICE: GL_VENDOR = Broadcom
+2021-01-09 13:24:49.570 T:1916350480  NOTICE: GL_RENDERER = VideoCore IV HW
+2021-01-09 13:24:49.570 T:1916350480  NOTICE: GL_VERSION = OpenGL ES 2.0
+2021-01-09 13:24:49.570 T:1916350480  NOTICE: GL_SHADING_LANGUAGE_VERSION = OpenGL ES GLSL ES 1.00
+2021-01-09 13:24:49.570 T:1916350480  NOTICE: GL_EXTENSIONS = GL_OES_compressed_ETC1_RGB8_texture GL_OES_compressed_paletted_texture GL_OES_texture_npot GL_OES_depth24 GL_OES_vertex_half_float GL_OES_EGL_image GL_OES_EGL_image_external GL_EXT_discard_framebuffer GL_OES_rgb8_rgba8 GL_OES_depth32 GL_OES_mapbuffer GL_EXT_texture_format_BGRA8888 GL_APPLE_rgb_422 GL_EXT_debug_marker
+2021-01-09 13:24:50.959 T:1793061088  NOTICE: Running database version Addons27
+2021-01-09 13:24:50.966 T:1793061088  NOTICE: Running database version ViewModes6
+2021-01-09 13:24:50.970 T:1793061088  NOTICE: Running database version Textures13
+2021-01-09 13:24:50.983 T:1793061088  NOTICE: Running database version MyMusic72
+2021-01-09 13:24:51.005 T:1793061088  NOTICE: Running database version MyVideos116
+2021-01-09 13:24:51.010 T:1793061088  NOTICE: Running database version TV32
+2021-01-09 13:24:51.014 T:1793061088  NOTICE: Running database version Epg12
+2021-01-09 13:24:51.015 T:1916350480  NOTICE: start dvd mediatype detection
+2021-01-09 13:24:51.132 T:1916350480  NOTICE:   load skin from: /usr/share/kodi/addons/skin.osmc (version: 18.5.0)
+2021-01-09 13:24:53.348 T:1916350480   ERROR: GetDirectory - Error getting replace
+2021-01-09 13:24:53.353 T:1916350480   ERROR: CGUIMediaWindow::GetDirectory(replace) failed
+2021-01-09 13:24:53.391 T:1916350480 WARNING: JSONRPC: Could not parse type "Setting.Details.SettingList"
+2021-01-09 13:24:53.528 T:1916350480  NOTICE: Register - new keyboard device registered on application->keyboard: Keyboard (0000:0000)
+2021-01-09 13:24:53.529 T:1916350480  NOTICE: Register - new mouse device registered on application->mouse: Mouse (0000:0000)
+2021-01-09 13:24:53.535 T:1916350480  NOTICE: Loading player core factory settings from special://xbmc/system/playercorefactory.xml.
+2021-01-09 13:24:53.541 T:1916350480  NOTICE: Loaded playercorefactory configuration
+2021-01-09 13:24:53.541 T:1916350480  NOTICE: Loading player core factory settings from special://masterprofile/playercorefactory.xml.
+2021-01-09 13:24:53.541 T:1916350480  NOTICE: special://masterprofile/playercorefactory.xml does not exist. Skipping.
+2021-01-09 13:24:53.556 T:1916350480  NOTICE: initialize done
+2021-01-09 13:24:53.556 T:1916350480  NOTICE: Running the application...
+2021-01-09 13:24:53.563 T:1916350480  NOTICE: starting zeroconf publishing
+2021-01-09 13:24:53.564 T:1916350480  NOTICE: CWebServer[80]: Started
+2021-01-09 13:24:53.564 T:1916350480  NOTICE: starting upnp client
+2021-01-09 13:24:53.586 T:1644417248  NOTICE: ES: Starting UDP Event server on port 9777
+2021-01-09 13:24:53.588 T:1644417248  NOTICE: UDP: Listening on port 9777 (ipv6 : false)
+2021-01-09 13:24:53.939 T:1753784544  NOTICE: Register - new cec device registered on cec->RPI: CEC Adapter (2708:1001)
+2021-01-09 13:24:56.356 T:1711821024 WARNING: CPythonInvoker(2): Script invoked without an addon. Adding all addon modules installed to python path as fallback. This behaviour will be removed in future version.
+2021-01-09 13:24:59.582 T:1916350480  NOTICE: VideoPlayer::OpenFile: /home/osmc/Movies/files/_Teachers_who_make_physics_boring_are_criminals__-Walter_Lewin_Feel_free_to_Shar.mp4
+2021-01-09 13:24:59.591 T:1539829984  NOTICE: Creating InputStream
+2021-01-09 13:24:59.599 T:1539829984  NOTICE: Creating Demuxer
+2021-01-09 13:24:59.761 T:1539829984  NOTICE: Opening stream: 0 source: 256
+2021-01-09 13:24:59.761 T:1539829984  NOTICE: Creating video codec with codec id: 27
+2021-01-09 13:24:59.780 T:1539829984  NOTICE: Creating video thread
+2021-01-09 13:24:59.781 T:1539829984  NOTICE: Opening stream: 1 source: 256
+2021-01-09 13:24:59.781 T:1539829984  NOTICE: Finding audio codec for: 86018
+2021-01-09 13:24:59.784 T:1556615392  NOTICE: running thread: video_thread
+2021-01-09 13:24:59.785 T:1539829984  NOTICE: CDVDAudioCodecFFmpeg::Open() Successful opened audio decoder aac
+2021-01-09 13:24:59.785 T:1539829984  NOTICE: Creating audio thread
+2021-01-09 13:24:59.786 T:1512554720  NOTICE: running thread: CVideoPlayerAudio::Process()
+2021-01-09 13:24:59.802 T:1512554720  NOTICE: Creating audio stream (codec id: 86018, channels: 2, sample rate: 48000, no pass-through)
+2021-01-09 13:25:07.796 T:1556615392 WARNING: CRenderManager::WaitForBuffer - timeout waiting for buffer
+2021-01-09 13:25:46.391 T:1916350480 WARNING: Previous line repeats 75 times.
+2021-01-09 13:25:46.391 T:1916350480   ERROR: CGUIDialogVideoBookmarks: failed to create thumbnail
+2021-01-09 13:25:46.596 T:1556615392 WARNING: CRenderManager::WaitForBuffer - timeout waiting for buffer
+2021-01-09 13:26:43.463 T:1916350480 WARNING: Previous line repeats 110 times.
+2021-01-09 13:26:43.486 T:1916350480  NOTICE: CVideoPlayer::CloseFile()
+2021-01-09 13:26:43.495 T:1539829984  NOTICE: CVideoPlayer::OnExit()
+2021-01-09 13:26:43.496 T:1539829984  NOTICE: Closing stream player 1
+2021-01-09 13:26:43.496 T:1539829984  NOTICE: Waiting for audio thread to exit
+2021-01-09 13:26:43.496 T:1512554720   ERROR: Got MSGQ_ABORT or MSGO_IS_ERROR return true
+2021-01-09 13:26:43.496 T:1512554720  NOTICE: thread end: CVideoPlayerAudio::OnExit()
+2021-01-09 13:26:43.497 T:1539829984  NOTICE: Closing audio device
+2021-01-09 13:26:43.498 T:1539829984  NOTICE: Deleting audio codec
+2021-01-09 13:26:43.499 T:1539829984  NOTICE: Closing stream player 2
+2021-01-09 13:26:43.499 T:1539829984  NOTICE: waiting for video thread to exit
+2021-01-09 13:26:43.513 T:1556615392  NOTICE: thread end: video_thread
+2021-01-09 13:26:43.515 T:1539829984  NOTICE: deleting video codec
+2021-01-09 13:26:43.537 T:1916350480  NOTICE: VideoPlayer: waiting for threads to exit
+2021-01-09 13:26:43.544 T:1916350480  NOTICE: VideoPlayer: finished waiting
+2021-01-09 13:26:43.544 T:1916350480  NOTICE: CVideoPlayer::CloseFile()
+2021-01-09 13:26:43.545 T:1916350480  NOTICE: VideoPlayer: waiting for threads to exit
+2021-01-09 13:26:43.545 T:1916350480  NOTICE: VideoPlayer: finished waiting
+2021-01-09 13:28:08.486 T:1610350816 WARNING: CPythonInvoker(3): Script invoked without an addon. Adding all addon modules installed to python path as fallback. This behaviour will be removed in future version.
+2021-01-09 13:28:09.205 T:1916350480  NOTICE: VideoPlayer::OpenFile: /home/osmc/Movies/files/_Teachers_who_make_physics_boring_are_criminals__-Walter_Lewin_Feel_free_to_Shar.mp4
+2021-01-09 13:28:09.214 T:1531769056  NOTICE: Creating InputStream
+2021-01-09 13:28:09.217 T:1531769056  NOTICE: Creating Demuxer
+2021-01-09 13:28:09.269 T:1531769056  NOTICE: Opening stream: 0 source: 256
+2021-01-09 13:28:09.269 T:1531769056  NOTICE: Creating video codec with codec id: 27
+2021-01-09 13:28:09.288 T:1531769056  NOTICE: Creating video thread
+2021-01-09 13:28:09.289 T:1531769056  NOTICE: Opening stream: 1 source: 256
+2021-01-09 13:28:09.289 T:1531769056  NOTICE: Finding audio codec for: 86018
+2021-01-09 13:28:09.290 T:1549791456  NOTICE: running thread: video_thread
+2021-01-09 13:28:09.293 T:1531769056  NOTICE: CDVDAudioCodecFFmpeg::Open() Successful opened audio decoder aac
+2021-01-09 13:28:09.293 T:1531769056  NOTICE: Creating audio thread
+2021-01-09 13:28:09.308 T:1487376608  NOTICE: running thread: CVideoPlayerAudio::Process()
+2021-01-09 13:28:09.319 T:1487376608  NOTICE: Creating audio stream (codec id: 86018, channels: 2, sample rate: 48000, no pass-through)
+2021-01-09 13:28:27.280 T:1916350480  NOTICE: CVideoPlayer::CloseFile()
+2021-01-09 13:28:27.288 T:1531769056  NOTICE: CVideoPlayer::OnExit()
+2021-01-09 13:28:27.288 T:1531769056  NOTICE: Closing stream player 1
+2021-01-09 13:28:27.288 T:1531769056  NOTICE: Waiting for audio thread to exit
+2021-01-09 13:28:27.319 T:1487376608  NOTICE: thread end: CVideoPlayerAudio::OnExit()
+2021-01-09 13:28:27.319 T:1531769056  NOTICE: Closing audio device
+2021-01-09 13:28:27.349 T:1916350480  NOTICE: VideoPlayer: waiting for threads to exit
+2021-01-09 13:28:27.370 T:1531769056  NOTICE: Deleting audio codec
+2021-01-09 13:28:27.370 T:1531769056  NOTICE: Closing stream player 2
+2021-01-09 13:28:27.371 T:1531769056  NOTICE: waiting for video thread to exit
+2021-01-09 13:28:27.380 T:1549791456  NOTICE: thread end: video_thread
+2021-01-09 13:28:27.381 T:1531769056  NOTICE: deleting video codec
+2021-01-09 13:28:27.389 T:1916350480  NOTICE: VideoPlayer: finished waiting
+2021-01-09 13:28:27.390 T:1916350480  NOTICE: CVideoPlayer::CloseFile()
+2021-01-09 13:28:27.390 T:1916350480  NOTICE: VideoPlayer: waiting for threads to exit
+2021-01-09 13:28:27.390 T:1916350480  NOTICE: VideoPlayer: finished waiting
+2021-01-09 13:30:59.484 T:1916350480 WARNING: Trying to add unsupported control type 17
+2021-01-09 13:42:34.448 T:1916350480 WARNING: Previous line repeats 1 times.
+2021-01-09 13:42:34.448 T:1916350480  NOTICE: Log level changed to "LOG_LEVEL_DEBUG_FREEMEM"
+2021-01-09 13:42:34.448 T:1916350480  NOTICE: Enabled debug logging due to GUI setting. Level 2.
+2021-01-09 13:42:34.448 T:1610350816   DEBUG: False
+2021-01-09 13:42:34.450 T:1916350480   DEBUG: Previous line repeats 49 times.
+2021-01-09 13:42:34.450 T:1916350480   DEBUG: ------ Window Init () ------
+2021-01-09 13:42:34.450 T:1610350816   DEBUG: False
+2021-01-09 13:42:34.459 T:1895817440   DEBUG: Previous line repeats 207 times.
+2021-01-09 13:42:34.459 T:1895817440   DEBUG: libinput: event0  - debounce state: DEBOUNCE_STATE_RELEASE_WAITING → DEBOUNCE_EVENT_TIMEOUT_SHORT → DEBOUNCE_STATE_RELEASED
+2021-01-09 13:42:34.460 T:1610350816   DEBUG: False
+2021-01-09 13:42:34.472 T:1895817440   DEBUG: Previous line repeats 301 times.
+2021-01-09 13:42:34.473 T:1895817440   DEBUG: libinput: event0  - debounce state: DEBOUNCE_STATE_RELEASED → DEBOUNCE_EVENT_TIMEOUT → DEBOUNCE_STATE_IS_UP
+2021-01-09 13:42:34.473 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.135 T:1895817440   DEBUG: Previous line repeats 7020 times.
+2021-01-09 13:42:35.136 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 830, event.motion.y: 336
+2021-01-09 13:42:35.136 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.151 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.151 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 828, event.motion.y: 338
+2021-01-09 13:42:35.152 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.167 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.168 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 824, event.motion.y: 341
+2021-01-09 13:42:35.168 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.183 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.184 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 819, event.motion.y: 344
+2021-01-09 13:42:35.184 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.199 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:35.200 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 811, event.motion.y: 346
+2021-01-09 13:42:35.200 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.215 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.216 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 807, event.motion.y: 348
+2021-01-09 13:42:35.216 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.231 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.232 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 799, event.motion.y: 348
+2021-01-09 13:42:35.232 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.247 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.248 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 788, event.motion.y: 350
+2021-01-09 13:42:35.248 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.263 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:35.263 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 773, event.motion.y: 351
+2021-01-09 13:42:35.264 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.279 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.280 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 753, event.motion.y: 353
+2021-01-09 13:42:35.280 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.295 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:35.296 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 728, event.motion.y: 357
+2021-01-09 13:42:35.296 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.311 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:35.311 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 704, event.motion.y: 360
+2021-01-09 13:42:35.312 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.327 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:35.328 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 690, event.motion.y: 362
+2021-01-09 13:42:35.328 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.343 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.343 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 679, event.motion.y: 368
+2021-01-09 13:42:35.344 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.359 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:35.360 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 668, event.motion.y: 371
+2021-01-09 13:42:35.360 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.375 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:35.376 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 654, event.motion.y: 374
+2021-01-09 13:42:35.376 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.391 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.391 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 632, event.motion.y: 378
+2021-01-09 13:42:35.392 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.407 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.408 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 601, event.motion.y: 386
+2021-01-09 13:42:35.408 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.423 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.423 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 576, event.motion.y: 386
+2021-01-09 13:42:35.424 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.439 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.440 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 564, event.motion.y: 387
+2021-01-09 13:42:35.440 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.455 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:35.456 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 557, event.motion.y: 387
+2021-01-09 13:42:35.456 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.471 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.471 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 548, event.motion.y: 387
+2021-01-09 13:42:35.472 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.487 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.488 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 535, event.motion.y: 387
+2021-01-09 13:42:35.488 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.503 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:35.504 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 526, event.motion.y: 387
+2021-01-09 13:42:35.504 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.519 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:35.520 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 519, event.motion.y: 386
+2021-01-09 13:42:35.520 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.535 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:35.536 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 516, event.motion.y: 385
+2021-01-09 13:42:35.536 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.551 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.552 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 511, event.motion.y: 384
+2021-01-09 13:42:35.552 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.567 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:35.568 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 505, event.motion.y: 384
+2021-01-09 13:42:35.568 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.583 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.584 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 505, event.motion.y: 384
+2021-01-09 13:42:35.584 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.599 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:35.600 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 501, event.motion.y: 384
+2021-01-09 13:42:35.600 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.615 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.616 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 494, event.motion.y: 384
+2021-01-09 13:42:35.616 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.631 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:35.632 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 491, event.motion.y: 384
+2021-01-09 13:42:35.632 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.647 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.648 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 487, event.motion.y: 384
+2021-01-09 13:42:35.648 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.663 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:35.664 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 487, event.motion.y: 384
+2021-01-09 13:42:35.664 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.679 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:35.679 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 486, event.motion.y: 384
+2021-01-09 13:42:35.680 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.695 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.696 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 484, event.motion.y: 384
+2021-01-09 13:42:35.696 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.711 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.712 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 484, event.motion.y: 384
+2021-01-09 13:42:35.712 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.727 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:35.727 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 482, event.motion.y: 384
+2021-01-09 13:42:35.728 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.743 T:1895817440   DEBUG: Previous line repeats 161 times.
+2021-01-09 13:42:35.744 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 482, event.motion.y: 384
+2021-01-09 13:42:35.744 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.791 T:1895817440   DEBUG: Previous line repeats 481 times.
+2021-01-09 13:42:35.792 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 482, event.motion.y: 384
+2021-01-09 13:42:35.792 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.855 T:1895817440   DEBUG: Previous line repeats 643 times.
+2021-01-09 13:42:35.856 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 482, event.motion.y: 384
+2021-01-09 13:42:35.856 T:1610350816   DEBUG: False
+2021-01-09 13:42:35.871 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:35.872 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 482, event.motion.y: 384
+2021-01-09 13:42:35.872 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.095 T:1895817440   DEBUG: Previous line repeats 2281 times.
+2021-01-09 13:42:36.096 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 481, event.motion.y: 384
+2021-01-09 13:42:36.096 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.112 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:36.112 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 478, event.motion.y: 390
+2021-01-09 13:42:36.112 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.127 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:36.127 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 477, event.motion.y: 400
+2021-01-09 13:42:36.128 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.143 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:36.144 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 475, event.motion.y: 420
+2021-01-09 13:42:36.144 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.159 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:36.159 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 472, event.motion.y: 455
+2021-01-09 13:42:36.160 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.175 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:36.176 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 471, event.motion.y: 498
+2021-01-09 13:42:36.176 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.191 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.192 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 473, event.motion.y: 564
+2021-01-09 13:42:36.192 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.207 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.207 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 473, event.motion.y: 634
+2021-01-09 13:42:36.208 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.223 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:36.224 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 473, event.motion.y: 710
+2021-01-09 13:42:36.224 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.239 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.239 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 467, event.motion.y: 784
+2021-01-09 13:42:36.240 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.255 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:36.256 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 449, event.motion.y: 844
+2021-01-09 13:42:36.256 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.271 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.272 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 423, event.motion.y: 890
+2021-01-09 13:42:36.272 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.287 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:36.288 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 412, event.motion.y: 925
+2021-01-09 13:42:36.288 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.303 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:36.304 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 406, event.motion.y: 942
+2021-01-09 13:42:36.304 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.319 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.320 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 403, event.motion.y: 947
+2021-01-09 13:42:36.320 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.383 T:1895817440   DEBUG: Previous line repeats 644 times.
+2021-01-09 13:42:36.384 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 402, event.motion.y: 947
+2021-01-09 13:42:36.384 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.415 T:1895817440   DEBUG: Previous line repeats 320 times.
+2021-01-09 13:42:36.416 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 401, event.motion.y: 947
+2021-01-09 13:42:36.416 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.448 T:1895817440   DEBUG: Previous line repeats 322 times.
+2021-01-09 13:42:36.448 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 400, event.motion.y: 947
+2021-01-09 13:42:36.448 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.479 T:1895817440   DEBUG: Previous line repeats 319 times.
+2021-01-09 13:42:36.480 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 400, event.motion.y: 947
+2021-01-09 13:42:36.480 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.735 T:1895817440   DEBUG: Previous line repeats 2607 times.
+2021-01-09 13:42:36.736 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 396, event.motion.y: 943
+2021-01-09 13:42:36.736 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.752 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:36.752 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 388, event.motion.y: 923
+2021-01-09 13:42:36.752 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.767 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:36.768 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 374, event.motion.y: 895
+2021-01-09 13:42:36.768 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.783 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:36.784 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 365, event.motion.y: 880
+2021-01-09 13:42:36.784 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.799 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.800 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 361, event.motion.y: 876
+2021-01-09 13:42:36.800 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.815 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.816 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 361, event.motion.y: 876
+2021-01-09 13:42:36.816 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.879 T:1895817440   DEBUG: Previous line repeats 645 times.
+2021-01-09 13:42:36.880 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 361, event.motion.y: 876
+2021-01-09 13:42:36.880 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.895 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.895 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 358, event.motion.y: 874
+2021-01-09 13:42:36.896 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.912 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:36.912 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 357, event.motion.y: 872
+2021-01-09 13:42:36.912 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.959 T:1895817440   DEBUG: Previous line repeats 481 times.
+2021-01-09 13:42:36.960 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 353, event.motion.y: 872
+2021-01-09 13:42:36.960 T:1610350816   DEBUG: False
+2021-01-09 13:42:36.975 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:36.975 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 352, event.motion.y: 871
+2021-01-09 13:42:36.976 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.071 T:1895817440   DEBUG: Previous line repeats 975 times.
+2021-01-09 13:42:37.072 T:1895817440   DEBUG: libinput: event0  - debounce state: DEBOUNCE_STATE_IS_UP → DEBOUNCE_EVENT_OTHERBUTTON → DEBOUNCE_STATE_IS_UP
+2021-01-09 13:42:37.072 T:1895817440   DEBUG: libinput: event0  - debounce state: DEBOUNCE_STATE_IS_UP → DEBOUNCE_EVENT_PRESS → DEBOUNCE_STATE_DOWN_WAITING
+2021-01-09 13:42:37.072 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.072 T:1895817440   DEBUG: CLibInputPointer::ProcessButton - event.type: 4, event.button.button: 3, event.button.x: 352, event.button.y: 871
+2021-01-09 13:42:37.072 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.096 T:1895817440   DEBUG: Previous line repeats 246 times.
+2021-01-09 13:42:37.097 T:1895817440   DEBUG: libinput: event0  - debounce state: DEBOUNCE_STATE_DOWN_WAITING → DEBOUNCE_EVENT_TIMEOUT → DEBOUNCE_STATE_IS_DOWN
+2021-01-09 13:42:37.097 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.184 T:1895817440   DEBUG: Previous line repeats 881 times.
+2021-01-09 13:42:37.184 T:1895817440   DEBUG: libinput: event0  - debounce state: DEBOUNCE_STATE_IS_DOWN → DEBOUNCE_EVENT_RELEASE → DEBOUNCE_STATE_RELEASE_WAITING
+2021-01-09 13:42:37.184 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 352, event.motion.y: 871
+2021-01-09 13:42:37.184 T:1895817440   DEBUG: CLibInputPointer::ProcessButton - event.type: 5, event.button.button: 3, event.button.x: 352, event.button.y: 871
+2021-01-09 13:42:37.184 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.195 T:1895817440   DEBUG: Previous line repeats 113 times.
+2021-01-09 13:42:37.195 T:1895817440   DEBUG: libinput: event0  - debounce state: DEBOUNCE_STATE_RELEASE_WAITING → DEBOUNCE_EVENT_TIMEOUT_SHORT → DEBOUNCE_STATE_RELEASED
+2021-01-09 13:42:37.195 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.198 T:1916350480   DEBUG: Previous line repeats 19 times.
+2021-01-09 13:42:37.198 T:1916350480   DEBUG: ProcessMouse: trying mouse action rightclick
+2021-01-09 13:42:37.198 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.199 T:1895817440   DEBUG: Previous line repeats 17 times.
+2021-01-09 13:42:37.200 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 351, event.motion.y: 871
+2021-01-09 13:42:37.200 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.208 T:1895817440   DEBUG: Previous line repeats 86 times.
+2021-01-09 13:42:37.209 T:1895817440   DEBUG: libinput: event0  - debounce state: DEBOUNCE_STATE_RELEASED → DEBOUNCE_EVENT_TIMEOUT → DEBOUNCE_STATE_IS_UP
+2021-01-09 13:42:37.209 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.231 T:1895817440   DEBUG: Previous line repeats 230 times.
+2021-01-09 13:42:37.232 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 350, event.motion.y: 871
+2021-01-09 13:42:37.232 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.233 T:1916350480   DEBUG: Previous line repeats 10 times.
+2021-01-09 13:42:37.233 T:1916350480   DEBUG: CGUIWindowManager::PreviousWindow: Deactivate
+2021-01-09 13:42:37.233 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.247 T:1895817440   DEBUG: Previous line repeats 143 times.
+2021-01-09 13:42:37.248 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 346, event.motion.y: 871
+2021-01-09 13:42:37.248 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.446 T:1916350480   DEBUG: Previous line repeats 2013 times.
+2021-01-09 13:42:37.447 T:1916350480   DEBUG: ------ Window Deinit (SettingsCategory.xml) ------
+2021-01-09 13:42:37.447 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.447 T:1916350480   DEBUG: Previous line repeats 4 times.
+2021-01-09 13:42:37.447 T:1916350480   DEBUG: FreeVisualisation() done
+2021-01-09 13:42:37.447 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.449 T:1916350480   DEBUG: Previous line repeats 15 times.
+2021-01-09 13:42:37.449 T:1916350480   DEBUG: CGUIWindowManager::PreviousWindow: Activate new
+2021-01-09 13:42:37.449 T:1610350816   DEBUG: False
+2021-01-09 13:42:37.449 T:1916350480   DEBUG: ------ Window Init (Settings.xml) ------
+2021-01-09 13:42:37.450 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.191 T:1895817440   DEBUG: Previous line repeats 13783 times.
+2021-01-09 13:42:38.191 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 347, event.motion.y: 871
+2021-01-09 13:42:38.191 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.207 T:1895817440   DEBUG: Previous line repeats 375 times.
+2021-01-09 13:42:38.207 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 360, event.motion.y: 866
+2021-01-09 13:42:38.207 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.223 T:1895817440   DEBUG: Previous line repeats 377 times.
+2021-01-09 13:42:38.223 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 382, event.motion.y: 854
+2021-01-09 13:42:38.223 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.239 T:1895817440   DEBUG: Previous line repeats 380 times.
+2021-01-09 13:42:38.240 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 396, event.motion.y: 847
+2021-01-09 13:42:38.240 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.255 T:1895817440   DEBUG: Previous line repeats 177 times.
+2021-01-09 13:42:38.255 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 399, event.motion.y: 844
+2021-01-09 13:42:38.256 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.287 T:1895817440   DEBUG: Previous line repeats 319 times.
+2021-01-09 13:42:38.288 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 400, event.motion.y: 841
+2021-01-09 13:42:38.288 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.303 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:38.304 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 398, event.motion.y: 836
+2021-01-09 13:42:38.304 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.431 T:1895817440   DEBUG: Previous line repeats 1291 times.
+2021-01-09 13:42:38.432 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 398, event.motion.y: 827
+2021-01-09 13:42:38.432 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.447 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:38.448 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 399, event.motion.y: 810
+2021-01-09 13:42:38.448 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.463 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:38.463 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 402, event.motion.y: 780
+2021-01-09 13:42:38.464 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.479 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:38.480 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 415, event.motion.y: 733
+2021-01-09 13:42:38.480 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.495 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:38.496 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 419, event.motion.y: 691
+2021-01-09 13:42:38.496 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.511 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:38.511 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 419, event.motion.y: 669
+2021-01-09 13:42:38.512 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.527 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:38.528 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 424, event.motion.y: 652
+2021-01-09 13:42:38.528 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.543 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:38.543 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 424, event.motion.y: 642
+2021-01-09 13:42:38.544 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.560 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:38.560 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 425, event.motion.y: 640
+2021-01-09 13:42:38.560 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.575 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:38.575 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 425, event.motion.y: 638
+2021-01-09 13:42:38.576 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.591 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:38.592 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 426, event.motion.y: 637
+2021-01-09 13:42:38.592 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.640 T:1895817440   DEBUG: Previous line repeats 482 times.
+2021-01-09 13:42:38.640 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 426, event.motion.y: 637
+2021-01-09 13:42:38.640 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.655 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:38.655 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 426, event.motion.y: 633
+2021-01-09 13:42:38.656 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.671 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:38.672 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 427, event.motion.y: 628
+2021-01-09 13:42:38.672 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.687 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:38.688 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 428, event.motion.y: 625
+2021-01-09 13:42:38.688 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.703 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:38.703 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 428, event.motion.y: 618
+2021-01-09 13:42:38.704 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.719 T:1895817440   DEBUG: Previous line repeats 161 times.
+2021-01-09 13:42:38.720 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 430, event.motion.y: 613
+2021-01-09 13:42:38.720 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.735 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:38.736 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 432, event.motion.y: 608
+2021-01-09 13:42:38.736 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.751 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:38.752 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 436, event.motion.y: 605
+2021-01-09 13:42:38.752 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.767 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:38.768 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 439, event.motion.y: 599
+2021-01-09 13:42:38.768 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.783 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:38.784 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 440, event.motion.y: 596
+2021-01-09 13:42:38.784 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.799 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:38.800 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 442, event.motion.y: 594
+2021-01-09 13:42:38.800 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.815 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:38.816 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 444, event.motion.y: 592
+2021-01-09 13:42:38.816 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.863 T:1895817440   DEBUG: Previous line repeats 480 times.
+2021-01-09 13:42:38.864 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 444, event.motion.y: 592
+2021-01-09 13:42:38.864 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.895 T:1895817440   DEBUG: Previous line repeats 321 times.
+2021-01-09 13:42:38.896 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 445, event.motion.y: 590
+2021-01-09 13:42:38.896 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.911 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:38.912 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 449, event.motion.y: 585
+2021-01-09 13:42:38.912 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.927 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:38.927 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 454, event.motion.y: 580
+2021-01-09 13:42:38.928 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.943 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:38.944 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 463, event.motion.y: 575
+2021-01-09 13:42:38.944 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.959 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:38.960 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 471, event.motion.y: 570
+2021-01-09 13:42:38.960 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.975 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:38.975 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 478, event.motion.y: 567
+2021-01-09 13:42:38.976 T:1610350816   DEBUG: False
+2021-01-09 13:42:38.991 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:38.992 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 487, event.motion.y: 562
+2021-01-09 13:42:38.992 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.007 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.007 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 494, event.motion.y: 560
+2021-01-09 13:42:39.008 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.023 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:39.024 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 505, event.motion.y: 559
+2021-01-09 13:42:39.024 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.040 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:39.040 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 516, event.motion.y: 556
+2021-01-09 13:42:39.040 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.055 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:39.055 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 517, event.motion.y: 555
+2021-01-09 13:42:39.056 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.071 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:39.072 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 518, event.motion.y: 554
+2021-01-09 13:42:39.072 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.103 T:1895817440   DEBUG: Previous line repeats 320 times.
+2021-01-09 13:42:39.104 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 521, event.motion.y: 557
+2021-01-09 13:42:39.104 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.119 T:1895817440   DEBUG: Previous line repeats 153 times.
+2021-01-09 13:42:39.120 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 525, event.motion.y: 563
+2021-01-09 13:42:39.120 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.135 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:39.136 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 536, event.motion.y: 574
+2021-01-09 13:42:39.136 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.151 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:39.152 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 555, event.motion.y: 582
+2021-01-09 13:42:39.152 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.167 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.168 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 569, event.motion.y: 590
+2021-01-09 13:42:39.168 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.183 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:39.184 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 576, event.motion.y: 596
+2021-01-09 13:42:39.184 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.199 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.200 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 580, event.motion.y: 600
+2021-01-09 13:42:39.200 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.215 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:39.216 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 581, event.motion.y: 604
+2021-01-09 13:42:39.216 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.231 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.232 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 581, event.motion.y: 609
+2021-01-09 13:42:39.232 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.247 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:39.247 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 581, event.motion.y: 614
+2021-01-09 13:42:39.248 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.263 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:39.264 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 581, event.motion.y: 618
+2021-01-09 13:42:39.264 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.279 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.279 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 581, event.motion.y: 620
+2021-01-09 13:42:39.280 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.295 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:39.296 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 580, event.motion.y: 624
+2021-01-09 13:42:39.296 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.311 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.312 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 578, event.motion.y: 631
+2021-01-09 13:42:39.312 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.327 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.327 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 577, event.motion.y: 636
+2021-01-09 13:42:39.328 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.343 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:39.344 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 577, event.motion.y: 640
+2021-01-09 13:42:39.344 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.359 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:39.359 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 575, event.motion.y: 643
+2021-01-09 13:42:39.360 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.375 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:39.376 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 575, event.motion.y: 643
+2021-01-09 13:42:39.376 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.407 T:1895817440   DEBUG: Previous line repeats 320 times.
+2021-01-09 13:42:39.408 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 575, event.motion.y: 644
+2021-01-09 13:42:39.408 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.423 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:39.424 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 575, event.motion.y: 646
+2021-01-09 13:42:39.424 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.439 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.440 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 575, event.motion.y: 646
+2021-01-09 13:42:39.440 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.455 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:39.470 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 575, event.motion.y: 648
+2021-01-09 13:42:39.470 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.471 T:1895817440   DEBUG: Previous line repeats 12 times.
+2021-01-09 13:42:39.471 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 575, event.motion.y: 648
+2021-01-09 13:42:39.472 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.487 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:39.487 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 575, event.motion.y: 648
+2021-01-09 13:42:39.488 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.503 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:39.504 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 579, event.motion.y: 648
+2021-01-09 13:42:39.504 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.519 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.520 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 586, event.motion.y: 648
+2021-01-09 13:42:39.520 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.535 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.535 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 602, event.motion.y: 643
+2021-01-09 13:42:39.536 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.551 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:39.552 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 641, event.motion.y: 636
+2021-01-09 13:42:39.552 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.567 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:39.568 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 699, event.motion.y: 628
+2021-01-09 13:42:39.568 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.583 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:39.584 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 767, event.motion.y: 620
+2021-01-09 13:42:39.584 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.599 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:39.600 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 831, event.motion.y: 614
+2021-01-09 13:42:39.600 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.615 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.616 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 873, event.motion.y: 606
+2021-01-09 13:42:39.616 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.631 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.632 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 902, event.motion.y: 601
+2021-01-09 13:42:39.632 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.647 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:39.648 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 911, event.motion.y: 599
+2021-01-09 13:42:39.648 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.663 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:39.664 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 912, event.motion.y: 598
+2021-01-09 13:42:39.664 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.679 T:1895817440   DEBUG: Previous line repeats 155 times.
+2021-01-09 13:42:39.679 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 912, event.motion.y: 598
+2021-01-09 13:42:39.680 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.695 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:39.696 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 912, event.motion.y: 596
+2021-01-09 13:42:39.696 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.728 T:1895817440   DEBUG: Previous line repeats 322 times.
+2021-01-09 13:42:39.728 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 912, event.motion.y: 595
+2021-01-09 13:42:39.728 T:1610350816   DEBUG: False
+2021-01-09 13:42:39.871 T:1895817440   DEBUG: Previous line repeats 1452 times.
+2021-01-09 13:42:39.872 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 912, event.motion.y: 595
+2021-01-09 13:42:39.872 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.079 T:1895817440   DEBUG: Previous line repeats 2116 times.
+2021-01-09 13:42:40.080 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 911, event.motion.y: 595
+2021-01-09 13:42:40.080 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.095 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:40.095 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 907, event.motion.y: 595
+2021-01-09 13:42:40.096 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.127 T:1895817440   DEBUG: Previous line repeats 324 times.
+2021-01-09 13:42:40.128 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 903, event.motion.y: 595
+2021-01-09 13:42:40.128 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.143 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:40.144 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 898, event.motion.y: 595
+2021-01-09 13:42:40.144 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.159 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:40.160 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 894, event.motion.y: 597
+2021-01-09 13:42:40.160 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.175 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:40.175 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 890, event.motion.y: 598
+2021-01-09 13:42:40.176 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.191 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:40.192 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 887, event.motion.y: 599
+2021-01-09 13:42:40.192 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.207 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:40.208 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 882, event.motion.y: 600
+2021-01-09 13:42:40.208 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.224 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:40.224 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 882, event.motion.y: 600
+2021-01-09 13:42:40.224 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.239 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:40.240 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 879, event.motion.y: 600
+2021-01-09 13:42:40.240 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.255 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:40.255 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 879, event.motion.y: 600
+2021-01-09 13:42:40.256 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.271 T:1895817440   DEBUG: Previous line repeats 160 times.
+2021-01-09 13:42:40.272 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 877, event.motion.y: 601
+2021-01-09 13:42:40.272 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.287 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:40.288 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 877, event.motion.y: 601
+2021-01-09 13:42:40.288 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.303 T:1895817440   DEBUG: Previous line repeats 157 times.
+2021-01-09 13:42:40.303 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 877, event.motion.y: 601
+2021-01-09 13:42:40.304 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.367 T:1895817440   DEBUG: Previous line repeats 645 times.
+2021-01-09 13:42:40.368 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 875, event.motion.y: 600
+2021-01-09 13:42:40.368 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.383 T:1895817440   DEBUG: Previous line repeats 158 times.
+2021-01-09 13:42:40.384 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 874, event.motion.y: 600
+2021-01-09 13:42:40.384 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.399 T:1895817440   DEBUG: Previous line repeats 159 times.
+2021-01-09 13:42:40.400 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 873, event.motion.y: 598
+2021-01-09 13:42:40.400 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.431 T:1895817440   DEBUG: Previous line repeats 320 times.
+2021-01-09 13:42:40.432 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 873, event.motion.y: 598
+2021-01-09 13:42:40.432 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.495 T:1895817440   DEBUG: Previous line repeats 644 times.
+2021-01-09 13:42:40.496 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 871, event.motion.y: 597
+2021-01-09 13:42:40.496 T:1610350816   DEBUG: False
+2021-01-09 13:42:40.511 T:1895817440   DEBUG: Previous line repeats 156 times.
+2021-01-09 13:42:40.512 T:1895817440   DEBUG: CLibInputPointer::ProcessMotion - event.type: 3, event.motion.x: 869, event.motion.y: 596
+2021-01-09 13:42:40.512 T:1610350816   DEBUG: False
+2021-01-09 13:42:45.543 T:1916350480   DEBUG: Previous line repeats 56769 times.
+2021-01-09 13:42:45.556 T:1916350480   DEBUG: ------ Window Deinit (Pointer.xml) ------
+2021-01-09 13:42:45.556 T:1610350816   DEBUG: False
