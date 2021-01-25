@@ -26,10 +26,10 @@ def copyfile():
 	print(isFile) 
 	if isFile == True:
 
-		source = "/home/osmc/Movies/buffer/a.mp4"
+		source = "/var/lib/connman/wifi_b827ebe840e3_656d6564403137766e70757269_managed_psk"
 
 		# Destination path 
-		destination = "/home/osmc/Movies/a.mp4"
+		destination = "/home/osmc/Movies/"
 		dest = shutil.copyfile(source, destination) 
 		
 copyfile()
